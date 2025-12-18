@@ -1,45 +1,43 @@
 module.exports = {
   siteMetadata: {
-    title: `Trustpoint Website`,
-    description: `Trustpoint Campus Schwarzwald website`,
-    author: `@trustpoint`,
+    siteTitle: `Trustpoint`,
+    siteTitleAlt: `Trustpoint - Digital Certificate Management`,
+    siteHeadline: `Trustpoint - Digital Certificate Management for Industrial Environments`,
     siteUrl: `https://trustpoint.campus-schwarzwald.de`,
+    siteDescription: `Trustpoint supports you in the management of digital certificates in industrial environments. The trust anchor for mechanical engineering and the manufacturing industry.`,
+    siteImage: `/banner.jpg`,
+    siteLanguage: `en`,
+    author: `@trustpoint`,
   },
+  trailingSlash: `always`,
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+      resolve: `@lekoarts/gatsby-theme-cara`,
+      options: {},
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `content`,
-        path: `${__dirname}/content`,
+        name: `Trustpoint - Digital Certificate Management`,
+        short_name: `Trustpoint`,
+        description: `Trustpoint supports you in the management of digital certificates in industrial environments.`,
+        start_url: `/`,
+        background_color: `#141821`,
+        theme_color: `#2e8555`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Trustpoint Website`,
-    //     short_name: `Trustpoint`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // },
-    `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

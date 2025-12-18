@@ -1,15 +1,15 @@
 var plugins = [{
-      name: 'gatsby-plugin-react-helmet',
-      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js'),
+      name: 'gatsby-plugin-theme-ui',
+      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-theme-ui/gatsby-ssr.js'),
       options: {"plugins":[]},
     },{
-      name: 'gatsby-plugin-image',
-      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-image/gatsby-ssr.js'),
+      name: '@lekoarts/gatsby-theme-cara',
+      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/@lekoarts/gatsby-theme-cara/gatsby-ssr.tsx'),
       options: {"plugins":[]},
     },{
-      name: 'gatsby-plugin-gatsby-cloud',
-      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-gatsby-cloud/gatsby-ssr.js'),
-      options: {"plugins":[]},
+      name: 'gatsby-plugin-manifest',
+      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-manifest/gatsby-ssr.js'),
+      options: {"plugins":[],"name":"Trustpoint - Digital Certificate Management","short_name":"Trustpoint","description":"Trustpoint supports you in the management of digital certificates in industrial environments.","start_url":"/","background_color":"#141821","theme_color":"#2e8555","display":"standalone","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":null},
     },{
       name: 'partytown',
       plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js'),

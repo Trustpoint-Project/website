@@ -4,6 +4,7 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
-  "component---src-pages-index-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/index.js"))
+  "component---cache-dev-404-page-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/.cache/dev-404-page.js")),
+  "component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx": preferDefault(require("/Users/florianhandke/PycharmProjects/website/node_modules/@lekoarts/gatsby-theme-cara/src/templates/cara.tsx"))
 }
 
