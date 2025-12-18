@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "https://trustpoint.campus-schwarzwald.de/*"
+  to = "https://trustpoint.campus-schwarzwald.de/:splat"
+  status = 200
+  force = true
+
+# Optional: Add redirects for SEO-safe migration
+# Add specific redirects as needed from old WordPress URLs to new paths
