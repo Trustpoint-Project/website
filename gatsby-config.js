@@ -3,16 +3,11 @@ module.exports = {
     title: `Trustpoint`,
     description: `Trustpoint supports you in the management of digital certificates in industrial environments. The trust anchor for mechanical engineering and the manufacturing industry.`,
     author: `@trustpoint`,
-    siteUrl: `https://trustpoint-project.github.io/website`,
+    siteUrl: `https://trustpoint-project.github.io/website/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        siteUrl: `https://trustpoint-project.github.io/website`,
-      },
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
