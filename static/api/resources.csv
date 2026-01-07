@@ -1,0 +1,10 @@
+Title,Type,Description,URL,Language,Duration,Year,Topics
+"Ende-zu-Ende gedacht: Industrielle Nutzung digitaler Identitäten",Paper,"A comprehensive overview of Trustpoint's architecture and its application in securing industrial environments.","/files/atp_magazin_9_2024_trustpoint.pdf",German,,2024,"Digital Identities, Industrial Security, PKI"
+"Certificate Lifecycle Management in OT Networks",Article,"Exploring the challenges and solutions for managing digital certificates in operational technology environments.",,English,,2024,"Certificate Management, OT Networks, Security"
+"Zero-Trust Architecture for Manufacturing",White Paper,"Implementing zero-trust principles in industrial manufacturing environments using Trustpoint.",,English,,2023,"Zero Trust, Manufacturing, Security"
+"Trustpoint Tech Intro",Video,"Join Alexander Harig and Christian Schwinne as they walk you through the core features of Trustpoint.","https://www.youtube.com/watch?v=Xowxd75lNdk",English,"42 minutes",2024,"Technical Overview, Features"
+"Trustpoint CI/CD Testing",Video,"Join Sven Bergmann as he walks you through the CI/CD and testing framework of Trustpoint.","https://www.youtube.com/watch?v=5HhKC1rGzZQ",English,"12 minutes",2024,"CI/CD, Testing, Development"
+"Asymetrische Verschlüsselung & Zertifikate",Video,"Prof. Jan Pelzl provides an introduction to Diffie-Hellman and RSA methods.","https://www.youtube.com/watch?v=bB-9h1drfSk",German,"35 minutes",2024,"Cryptography, RSA, Diffie-Hellman"
+"Blaupause PKI",Video,"Andreas Philipp reports on setting up and operating your own public key infrastructure.","https://www.youtube.com/watch?v=VlxS0ADxX0Q",German,"32 minutes",2024,"PKI, Infrastructure, Setup"
+"CRA, IEC 62443 und digitale Geräteidentitäten",Video,"Dr. Michael Jahnich on digital device identities and compliance.","https://www.youtube.com/watch?v=fVm8D4A0-p8",German,"29 minutes",2024,"IEC 62443, CRA, Device Identities"
+"OPC UA Zertifikate",Video,"Arno Fast explains certificate management in OPC UA.","https://www.youtube.com/watch?v=CMssNfKeM3A",German,"26 minutes",2024,"OPC UA, Certificates, Industrial Protocols"

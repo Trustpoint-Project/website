@@ -1,15 +1,19 @@
 var plugins = [{
-      name: 'gatsby-plugin-theme-ui',
-      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-theme-ui/gatsby-ssr.js'),
+      name: 'gatsby-plugin-react-helmet',
+      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js'),
       options: {"plugins":[]},
     },{
-      name: '@lekoarts/gatsby-theme-cara',
-      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/@lekoarts/gatsby-theme-cara/gatsby-ssr.tsx'),
-      options: {"plugins":[]},
+      name: 'gatsby-plugin-sitemap',
+      plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-sitemap/gatsby-ssr.js'),
+      options: {"plugins":[],"output":"/","createLinkInHead":true,"entryLimit":45000,"query":"{ site { siteMetadata { siteUrl } } allSitePage { nodes { path } } }","excludes":[]},
     },{
       name: 'gatsby-plugin-manifest',
       plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-manifest/gatsby-ssr.js'),
-      options: {"plugins":[],"name":"Trustpoint - Digital Certificate Management","short_name":"Trustpoint","description":"Trustpoint supports you in the management of digital certificates in industrial environments.","start_url":"/","background_color":"#141821","theme_color":"#2e8555","display":"standalone","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":null},
+      options: {"plugins":[],"name":"Trustpoint - Digital Certificate Management","short_name":"Trustpoint","description":"Trustpoint supports you in the management of digital certificates in industrial environments.","start_url":"/","background_color":"#ffffff","theme_color":"#004aad","display":"standalone","icon":"static/logos/trustpoint_favicon_main.png","icons":[{"src":"/logos/trustpoint_favicon_main.png","sizes":"192x192","type":"image/png"},{"src":"/logos/trustpoint_favicon_main.png","sizes":"512x512","type":"image/png"}],"legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"f2e50e848c4daf3b2f153d0e7855d743"},
+    },{
+      name: 'default-site-plugin',
+      plugin: require('/Users/florianhandke/PycharmProjects/website/gatsby-ssr.js'),
+      options: {"plugins":[]},
     },{
       name: 'partytown',
       plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js'),

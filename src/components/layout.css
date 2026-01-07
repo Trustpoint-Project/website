@@ -1,388 +1,102 @@
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --ifm-menu-color: var(--ifm-color-emphasis-900);
-  --ifm-menu-color-active: var(--ifm-color-primary);
-}
-
-html[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --ifm-menu-color: var(--ifm-color-emphasis-200);
-  --ifm-menu-color-active: var(--ifm-color-primary);
-}
-
+/* Global Styles for Trustpoint */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 a {
-  color: inherit;
+  color: #007bff;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+a:hover {
+  color: #0056b3;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100svh;
-}
-
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 200;
-  top: 0.5rem;
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
-}
-
-.card {
-  padding: 1rem 1.2rem;
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.05);
-  transition: background 200ms, border 200ms;
-}
-
-.card span {
+/* Button styles */
+.btn {
   display: inline-block;
-  transition: transform 200ms;
-}
-
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-}
-
-.card:hover span {
-  transform: translateX(4px);
-}
-
-.card:hover {
-  background: rgba(var(--card-rgb), 0.1);
-  border: 1px solid rgba(var(--card-border-rgb), 0.15);
-}
-
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-  }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--background-end-rgb), 1)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 20%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 20%
-    );
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-/* Trustpoint specific styles */
-.hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
   color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+.btn:hover {
+  background-color: #0056b3;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 0;
-  opacity: 0.9;
-}
-
-.applications, .roadmap, .pipeline, .initiative, .videos, .development, .demo, .intro, .team {
-  padding: 3rem 2rem;
+/* Layout utilities */
+.container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.applications h2, .roadmap h2, .pipeline h2, .initiative h2, .videos h2, .development h2, .demo h2, .intro h2, .team h2 {
-  color: #2e8555;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.section {
+  padding: 4rem 0;
 }
 
-.applications h3, .roadmap h3, .demo h3, .intro h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333;
-}
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
 
-.applications p, .roadmap p, .initiative p, .videos p, .development p, .demo p, .intro p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  h1 {
+    font-size: 2rem;
+  }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+  h2 {
+    font-size: 1.75rem;
+  }
 
-.feature {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #e9ecef;
-}
-
-.feature h4 {
-  margin: 0;
-  color: #495057;
-  font-size: 1rem;
-}
-
-.releases {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.release {
-  background: #f8f9fa;
-  padding: 2rem;
-  border-radius: 8px;
-  border-left: 4px solid #2e8555;
-}
-
-.release h4 {
-  color: #2e8555;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-
-.release .date {
-  color: #6c757d;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.release ul {
-  margin: 0;
-  padding-left: 1.5rem;
-}
-
-.release li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-
-.pipeline-features, .team-members {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.pipeline-item, .team-member {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
-}
-
-.pipeline-item h4, .team-member h4 {
-  margin: 0;
-  color: #495057;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.video-links, .demo-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.video-link, .demo-link {
-  display: inline-block;
-  background: #2e8555;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.video-link:hover, .demo-link:hover {
-  background: #257a47;
+  .section {
+    padding: 3rem 0;
+  }
 }
 
 .footer-info {
@@ -432,5 +146,21 @@ main {
   .video-links, .demo-links {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* Mobile menu overlay styles */
+.mobile-menu {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

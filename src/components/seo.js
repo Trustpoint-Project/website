@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, lang, meta, title }) => {
+const Seo = ({ description = ``, lang = `en`, meta = [], title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -46,30 +46,56 @@ const Seo = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: `robots`,
+          content: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          name: `googlebot`,
+          content: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`,
         },
         {
-          name: `twitter:title`,
-          content: title,
+          name: `bingbot`,
+          content: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`,
         },
         {
-          name: `twitter:description`,
-          content: metaDescription,
+          name: `author`,
+          content: `Trustpoint Project Team`,
+        },
+        {
+          name: `publisher`,
+          content: `Trustpoint Project`,
+        },
+        {
+          name: `language`,
+          content: `English`,
+        },
+        {
+          name: `revisit-after`,
+          content: `7 days`,
+        },
+        {
+          httpEquiv: `content-language`,
+          content: `en-US`,
+        },
+        {
+          name: `format-detection`,
+          content: `telephone=no`,
+        },
+        {
+          name: `theme-color`,
+          content: `#004aad`,
+        },
+        {
+          name: `msapplication-TileColor`,
+          content: `#004aad`,
+        },
+        {
+          name: `application-name`,
+          content: `Trustpoint`,
         },
       ].concat(meta)}
     />
   )
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 }
 
 Seo.propTypes = {

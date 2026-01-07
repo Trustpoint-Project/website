@@ -1,0 +1,104 @@
+{
+  "name": "Trustpoint Project",
+  "description": "Open-source PKI solution for industrial IoT security",
+  "url": "https://trustpoint-project.github.io",
+  "repository": "https://github.com/Trustpoint-Project",
+  "license": "MIT",
+  "language": "Python",
+  "framework": "Django",
+  "technologies": [
+    "Python",
+    "Django",
+    "Docker",
+    "PostgreSQL",
+    "PKCS#11",
+    "CMP",
+    "EST",
+    "REST API"
+  ],
+  "team": [
+    {
+      "name": "Florian Handke",
+      "organization": "Campus Schwarzwald",
+      "role": "Project Lead"
+    },
+    {
+      "name": "Christian Schwinne",
+      "organization": "Hochschule Hamm-Lippstadt",
+      "role": "Developer"
+    },
+    {
+      "name": "Alexander Harig",
+      "organization": "Campus Schwarzwald",
+      "role": "Developer"
+    },
+    {
+      "name": "Dominik Isaak",
+      "organization": "achelos GmbH",
+      "role": "Developer"
+    },
+    {
+      "name": "Rohot Bohara",
+      "organization": "achelos GmbH",
+      "role": "Developer"
+    }
+  ],
+  "partners": [
+    "achelos GmbH",
+    "asvin GmbH",
+    "Keyfactor",
+    "Campus Schwarzwald",
+    "Hochschule Hamm-Lippstadt",
+    "ARBURG GmbH",
+    "Belden Inc",
+    "HOMAG Group",
+    "Phoenix Contact",
+    "Schmalz",
+    "Siemens",
+    "Diebold Nixdorf"
+  ],
+  "funding": {
+    "organization": "German Federal Ministry of Research, Technology and Space",
+    "period": "September 2023 - ongoing"
+  },
+  "features": [
+    "Certificate Authority (CA) functionality",
+    "Registration Authority (RA) functionality",
+    "Certificate Management Protocol (CMP)",
+    "Enrollment over Secure Transport (EST)",
+    "REST API for certificate management",
+    "Docker containerization",
+    "Hardware Security Module (HSM) support",
+    "Automated certificate lifecycle management"
+  ],
+  "resources": {
+    "papers": [
+      {
+        "title": "Ende-zu-Ende gedacht: Industrielle Nutzung digitaler Identitäten",
+        "authors": ["Trustpoint Team"],
+        "publication": "atp-Magazin",
+        "year": 2024,
+        "language": "German",
+        "url": "/files/atp_magazin_9_2024_trustpoint.pdf",
+        "topics": ["Digital Identities", "Industrial Security", "PKI"]
+      }
+    ],
+    "videos": [
+      {
+        "title": "Trustpoint Tech Intro",
+        "duration": "42 minutes",
+        "language": "English",
+        "presenters": ["Alexander Harig", "Christian Schwinne"],
+        "topics": ["Technical Overview", "Features"],
+        "url": "https://www.youtube.com/watch?v=Xowxd75lNdk"
+      }
+    ]
+  },
+  "contact": {
+    "organization": "Centrum für Digitalisierung, Führung und Nachhaltigkeit Schwarzwald gGmbH",
+    "address": "Herzog-Eberhard-Str. 56, 72250 Freudenstadt, Germany",
+    "email": "trustpoint@campus-schwarzwald.de",
+    "github": "https://github.com/Trustpoint-Project"
+  },
+  "lastUpdated": "2026-01-07"
+}

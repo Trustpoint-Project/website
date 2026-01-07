@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trustpoint API - Machine Readable Data</title>
+    <meta name="description" content="Machine-readable API endpoints for Trustpoint project data. JSON and CSV formats available for AI and automated systems.">
+    <meta name="robots" content="index, follow">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .endpoint { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .method { color: #0066cc; font-weight: bold; }
+        .format { background: #e8f4fd; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        code { background: #f8f8f8; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Trustpoint API</h1>
+    <p>Machine-readable data endpoints for AI systems and automated tools.</p>
+
+    <div class="endpoint">
+        <h3><span class="method">GET</span> /api/project-info.json</h3>
+        <p>Comprehensive project metadata including team, technologies, and features.</p>
+        <p><span class="format">Format: JSON</span></p>
+        <p><strong>Example:</strong> <code>curl https://trustpoint-project.github.io/api/project-info.json</code></p>
+    </div>
+
+    <div class="endpoint">
+        <h3><span class="method">GET</span> /api/resources.csv</h3>
+        <p>Tabular data of all papers, articles, and videos with metadata.</p>
+        <p><span class="format">Format: CSV</span></p>
+        <p><strong>Example:</strong> <code>curl https://trustpoint-project.github.io/api/resources.csv</code></p>
+    </div>
+
+    <div class="endpoint">
+        <h3><span class="method">GET</span> /robots.txt</h3>
+        <p>Crawler instructions and sitemap location.</p>
+        <p><span class="format">Format: TXT</span></p>
+    </div>
+
+    <div class="endpoint">
+        <h3><span class="method">GET</span> /sitemap.xml</h3>
+        <p>XML sitemap of all website pages.</p>
+        <p><span class="format">Format: XML</span></p>
+    </div>
+
+    <h2>Data Schema Documentation</h2>
+    <p>Detailed schema information available in <a href="/api/README.md">README.md</a></p>
+
+    <h2>Contact</h2>
+    <p>For API questions: <a href="mailto:trustpoint@campus-schwarzwald.de">trustpoint@campus-schwarzwald.de</a></p>
+</body>
+</html>

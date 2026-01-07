@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# Allow AI crawlers and scrapers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Allow common search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow access to admin areas and sensitive files
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.env
+Disallow: /_next/
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://trustpoint-project.github.io/sitemap.xml

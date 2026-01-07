@@ -1,19 +1,17 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `Trustpoint`,
-    siteTitleAlt: `Trustpoint - Digital Certificate Management`,
-    siteHeadline: `Trustpoint - Digital Certificate Management for Industrial Environments`,
-    siteUrl: `https://trustpoint.campus-schwarzwald.de`,
-    siteDescription: `Trustpoint supports you in the management of digital certificates in industrial environments. The trust anchor for mechanical engineering and the manufacturing industry.`,
-    siteImage: `/banner.jpg`,
-    siteLanguage: `en`,
+    title: `Trustpoint`,
+    description: `Trustpoint supports you in the management of digital certificates in industrial environments. The trust anchor for mechanical engineering and the manufacturing industry.`,
     author: `@trustpoint`,
+    siteUrl: `https://trustpoint-project.github.io/website`,
   },
-  trailingSlash: `always`,
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `@lekoarts/gatsby-theme-cara`,
-      options: {},
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        siteUrl: `https://trustpoint-project.github.io/website`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -22,17 +20,18 @@ module.exports = {
         short_name: `Trustpoint`,
         description: `Trustpoint supports you in the management of digital certificates in industrial environments.`,
         start_url: `/`,
-        background_color: `#141821`,
-        theme_color: `#2e8555`,
+        background_color: `#ffffff`,
+        theme_color: `#004aad`,
         display: `standalone`,
+        icon: `static/logos/trustpoint_favicon_main.png`,
         icons: [
           {
-            src: `/android-chrome-192x192.png`,
+            src: `/logos/trustpoint_favicon_main.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/android-chrome-512x512.png`,
+            src: `/logos/trustpoint_favicon_main.png`,
             sizes: `512x512`,
             type: `image/png`,
           },

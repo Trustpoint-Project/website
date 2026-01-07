@@ -11,5 +11,10 @@
   status = 200
   force = true
 
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 200
+
 # Optional: Add redirects for SEO-safe migration
 # Add specific redirects as needed from old WordPress URLs to new paths

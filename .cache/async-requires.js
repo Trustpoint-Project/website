@@ -1,11 +1,11 @@
 exports.components = {
-  "component---cache-dev-404-page-js": () => import("./../../dev-404-page.js?export=default" /* webpackChunkName: "component---cache-dev-404-page-js" */),
-  "component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx": () => import("./../../../node_modules/@lekoarts/gatsby-theme-cara/src/templates/cara.tsx?export=default" /* webpackChunkName: "component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx" */)
-}
-
-
-
-exports.head = {
-  "component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx": () => import("./../../../node_modules/@lekoarts/gatsby-theme-cara/src/templates/cara.tsx?export=head" /* webpackChunkName: "component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsxhead" */)
+  "component---src-pages-404-js": () => import("./../../../src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */),
+  "component---src-pages-about-js": () => import("./../../../src/pages/about.js" /* webpackChunkName: "component---src-pages-about-js" */),
+  "component---src-pages-brand-js": () => import("./../../../src/pages/brand.js" /* webpackChunkName: "component---src-pages-brand-js" */),
+  "component---src-pages-contact-js": () => import("./../../../src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
+  "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-resources-js": () => import("./../../../src/pages/resources.js" /* webpackChunkName: "component---src-pages-resources-js" */),
+  "component---src-pages-roadmap-js": () => import("./../../../src/pages/roadmap.js" /* webpackChunkName: "component---src-pages-roadmap-js" */),
+  "component---src-pages-test-404-js": () => import("./../../../src/pages/test-404.js" /* webpackChunkName: "component---src-pages-test-404-js" */)
 }
 

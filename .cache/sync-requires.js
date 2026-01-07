@@ -4,7 +4,13 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
-  "component---cache-dev-404-page-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/.cache/dev-404-page.js")),
-  "component---node-modules-lekoarts-gatsby-theme-cara-src-templates-cara-tsx": preferDefault(require("/Users/florianhandke/PycharmProjects/website/node_modules/@lekoarts/gatsby-theme-cara/src/templates/cara.tsx"))
+  "component---src-pages-404-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/404.js")),
+  "component---src-pages-about-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/about.js")),
+  "component---src-pages-brand-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/brand.js")),
+  "component---src-pages-contact-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/contact.js")),
+  "component---src-pages-index-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/index.js")),
+  "component---src-pages-resources-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/resources.js")),
+  "component---src-pages-roadmap-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/roadmap.js")),
+  "component---src-pages-test-404-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/test-404.js"))
 }
 
