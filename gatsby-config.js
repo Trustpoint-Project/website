@@ -3,7 +3,7 @@ module.exports = {
     title: `Trustpoint`,
     description: `Trustpoint supports you in the management of digital certificates in industrial environments. The trust anchor for mechanical engineering and the manufacturing industry.`,
     author: `@trustpoint`,
-    siteUrl: `https://trustpoint-project.github.io/website/`,
+    siteUrl: `https://trustpoint.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

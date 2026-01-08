@@ -7,6 +7,19 @@ import { ThemeContext } from "../components/theme-provider"
 const ImpressionCarousel = () => {
   const { theme } = React.useContext(ThemeContext)
   const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  // Check if screen is mobile size
+  React.useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   // Define all impression images with their theme requirements
   const allImpressions = [
@@ -58,66 +71,135 @@ const ImpressionCarousel = () => {
   if (currentImpressions.length === 0) return null
 
   return (
-    <div style={styles.carouselContainer}>
-      <div style={styles.carouselWrapper}>
-        {/* Navigation buttons */}
-        <button
-          onClick={prevImpression}
-          style={{
-            ...styles.carouselNavButton,
-            color: theme === 'light' ? '#333' : '#fff'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'scale(1.2)';
-            e.target.style.opacity = '0.7';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'scale(1)';
-            e.target.style.opacity = '1';
-          }}
-          aria-label="Previous impression"
-        >
-          ‹
-        </button>
+    <div style={{
+      maxWidth: isMobile ? '100%' : '1000px',
+      margin: isMobile ? '0' : '0 auto',
+      padding: isMobile ? '1rem' : '1rem 0'
+    }}>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        maxWidth: isMobile ? '100%' : '900px',
+        margin: '0 auto',
+        padding: isMobile ? '0' : '0 80px'
+      }}>
+        {/* Navigation buttons - hidden on mobile */}
+        {!isMobile && (
+          <button
+            onClick={prevImpression}
+            style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              width: '60px',
+              height: '60px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '48px',
+              fontWeight: 'bold',
+              zIndex: 20,
+              transition: 'all 0.3s ease',
+              flexShrink: 0,
+              position: 'relative',
+              padding: '0',
+              color: theme === 'light' ? '#333' : '#fff'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.2)';
+              e.target.style.opacity = '0.7';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.opacity = '1';
+            }}
+            aria-label="Previous impression"
+          >
+            ‹
+          </button>
+        )}
 
         {/* Main image display */}
-        <div style={styles.carouselImageContainer}>
+        <div style={{
+          flex: 1,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '400px'
+        }}>
           <img
             src={currentImpressions[currentIndex].src}
             alt={`Trustpoint impression ${currentIndex + 1}`}
-            style={styles.carouselImage}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '400px',
+              width: 'auto',
+              height: 'auto',
+              borderRadius: '12px',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease'
+            }}
           />
         </div>
 
-        <button
-          onClick={nextImpression}
-          style={{
-            ...styles.carouselNavButton,
-            color: theme === 'light' ? '#333' : '#fff'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'scale(1.2)';
-            e.target.style.opacity = '0.7';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'scale(1)';
-            e.target.style.opacity = '1';
-          }}
-          aria-label="Next impression"
-        >
-          ›
-        </button>
+        {/* Navigation buttons - hidden on mobile */}
+        {!isMobile && (
+          <button
+            onClick={nextImpression}
+            style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              width: '60px',
+              height: '60px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '48px',
+              fontWeight: 'bold',
+              zIndex: 20,
+              transition: 'all 0.3s ease',
+              flexShrink: 0,
+              position: 'relative',
+              padding: '0',
+              color: theme === 'light' ? '#333' : '#fff'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.2)';
+              e.target.style.opacity = '0.7';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.opacity = '1';
+            }}
+            aria-label="Next impression"
+          >
+            ›
+          </button>
+        )}
       </div>
 
       {/* Dots indicator */}
-      <div style={styles.carouselDots}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '8px',
+        marginTop: '1rem'
+      }}>
         {currentImpressions.map((_, index) => (
           <button
             key={index}
             onClick={() => goToImpression(index)}
             style={{
-              ...styles.carouselDot,
-              ...(index === currentIndex ? styles.carouselDotActive : {})
+              width: '12px',
+              height: '12px',
+              borderRadius: '50%',
+              border: 'none',
+              backgroundColor: index === currentIndex ? '#007bff' : '#dee2e6',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s ease'
             }}
             aria-label={`Go to impression ${index + 1}`}
           />
@@ -416,74 +498,6 @@ const styles = {
     textAlign: 'center',
     marginBottom: '3rem',
     lineHeight: '1.7'
-  },
-
-  // Impression Carousel
-  carouselContainer: {
-    maxWidth: '1000px',
-    margin: '0 auto',
-    padding: '1rem 0'
-  },
-  carouselWrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    position: 'relative',
-    maxWidth: '900px',
-    margin: '0 auto',
-    padding: '0 80px'
-  },
-  carouselNavButton: {
-    backgroundColor: 'transparent',
-    border: 'none',
-    width: '60px',
-    height: '60px',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '48px',
-    fontWeight: 'bold',
-    zIndex: 20,
-    transition: 'all 0.3s ease',
-    flexShrink: 0,
-    position: 'relative',
-    padding: '0'
-  },
-  carouselImageContainer: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: '400px'
-  },
-  carouselImage: {
-    maxWidth: '100%',
-    maxHeight: '400px',
-    width: 'auto',
-    height: 'auto',
-    borderRadius: '12px',
-    boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
-    transition: 'transform 0.3s ease'
-  },
-  carouselDots: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '8px',
-    marginTop: '1rem'
-  },
-  carouselDot: {
-    width: '12px',
-    height: '12px',
-    borderRadius: '50%',
-    border: 'none',
-    backgroundColor: 'var(--text-tertiary)',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease'
-  },
-  carouselDotActive: {
-    backgroundColor: 'var(--brand-primary)',
-    transform: 'scale(1.2)'
   }
 }
 

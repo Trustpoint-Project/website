@@ -4,11 +4,12 @@
   "private": true,
   "description": "Trustpoint website built with Gatsby",
   "author": "Trustpoint Project",
+  "homepage": "https://trustpoint.netlify.app",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && sed -i '' 's|https://trustpoint.campus-schwarzwald.de/|https://trustpoint.netlify.app/|g' public/sitemap-*.xml && cp public/sitemap-index.xml public/sitemap.xml",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",

@@ -428,23 +428,41 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               position: 'relative',
               paddingBottom: '56.25%', // 16:9 aspect ratio
               height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe
-                src="https://www.youtube.com/embed/Xowxd75lNdk"
-                title="Trustpoint Tech Intro"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              overflow: 'hidden',
+              cursor: 'pointer'
+            }}
+            onClick={() => window.open('https://www.youtube.com/watch?v=Xowxd75lNdk', '_blank')}
+            >
+              <img
+                src="https://img.youtube.com/vi/Xowxd75lNdk/maxresdefault.jpg"
+                alt="Trustpoint Tech Intro"
                 style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
+                  objectFit: 'cover',
                   border: 'none'
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px'
+              }}>
+                ▶
+              </div>
             </div>
             <div style={{ padding: '1.5rem' }}>
               <h3 style={{
@@ -501,23 +519,41 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               position: 'relative',
               paddingBottom: '56.25%', // 16:9 aspect ratio
               height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe
-                src="https://www.youtube.com/embed/5HhKC1rGzZQ"
-                title="Installing Trustpoint - Step by Step Guide"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              overflow: 'hidden',
+              cursor: 'pointer'
+            }}
+            onClick={() => window.open('https://www.youtube.com/watch?v=5HhKC1rGzZQ', '_blank')}
+            >
+              <img
+                src="https://img.youtube.com/vi/5HhKC1rGzZQ/maxresdefault.jpg"
+                alt="Installing Trustpoint - Step by Step Guide"
                 style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
+                  objectFit: 'cover',
                   border: 'none'
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px'
+              }}>
+                ▶
+              </div>
             </div>
             <div style={{ padding: '1.5rem' }}>
               <h3 style={{
@@ -574,23 +610,41 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               position: 'relative',
               paddingBottom: '56.25%', // 16:9 aspect ratio
               height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe
-                src="https://www.youtube.com/embed/bB-9h1drfSk"
-                title="Asymetrische Verschlüsselung & Zertifikate"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              overflow: 'hidden',
+              cursor: 'pointer'
+            }}
+            onClick={() => window.open('https://www.youtube.com/watch?v=bB-9h1drfSk', '_blank')}
+            >
+              <img
+                src="https://img.youtube.com/vi/bB-9h1drfSk/maxresdefault.jpg"
+                alt="Asymetrische Verschlüsselung & Zertifikate"
                 style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
+                  objectFit: 'cover',
                   border: 'none'
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px'
+              }}>
+                ▶
+              </div>
             </div>
             <div style={{ padding: '1.5rem' }}>
               <h3 style={{
@@ -647,23 +701,41 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               position: 'relative',
               paddingBottom: '56.25%', // 16:9 aspect ratio
               height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe
-                src="https://www.youtube.com/embed/VlxS0ADxX0Q"
-                title="Blaupause PKI"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              overflow: 'hidden',
+              cursor: 'pointer'
+            }}
+            onClick={() => window.open('https://www.youtube.com/watch?v=VlxS0ADxX0Q', '_blank')}
+            >
+              <img
+                src="https://img.youtube.com/vi/VlxS0ADxX0Q/maxresdefault.jpg"
+                alt="Blaupause PKI"
                 style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
+                  objectFit: 'cover',
                   border: 'none'
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px'
+              }}>
+                ▶
+              </div>
             </div>
             <div style={{ padding: '1.5rem' }}>
               <h3 style={{
@@ -720,23 +792,41 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               position: 'relative',
               paddingBottom: '56.25%', // 16:9 aspect ratio
               height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe
-                src="https://www.youtube.com/embed/fVm8D4A0-p8"
-                title=" CRA, IEC 62443 und digitale Geräteidentitäten "
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              overflow: 'hidden',
+              cursor: 'pointer'
+            }}
+            onClick={() => window.open('https://www.youtube.com/watch?v=fVm8D4A0-p8', '_blank')}
+            >
+              <img
+                src="https://img.youtube.com/vi/fVm8D4A0-p8/maxresdefault.jpg"
+                alt=" CRA, IEC 62443 und digitale Geräteidentitäten "
                 style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
+                  objectFit: 'cover',
                   border: 'none'
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px'
+              }}>
+                ▶
+              </div>
             </div>
             <div style={{ padding: '1.5rem' }}>
               <h3 style={{
@@ -793,23 +883,41 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               position: 'relative',
               paddingBottom: '56.25%', // 16:9 aspect ratio
               height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe
-                src="https://www.youtube.com/embed/CMssNfKeM3A"
-                title="OPC UA Zertifikate [German"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              overflow: 'hidden',
+              cursor: 'pointer'
+            }}
+            onClick={() => window.open('https://www.youtube.com/watch?v=CMssNfKeM3A', '_blank')}
+            >
+              <img
+                src="https://img.youtube.com/vi/CMssNfKeM3A/maxresdefault.jpg"
+                alt="OPC UA Zertifikate [German"
                 style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
+                  objectFit: 'cover',
                   border: 'none'
                 }}
               />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px'
+              }}>
+                ▶
+              </div>
             </div>
             <div style={{ padding: '1.5rem' }}>
               <h3 style={{

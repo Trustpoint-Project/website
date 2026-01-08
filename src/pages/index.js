@@ -6,6 +6,19 @@ import Seo from "../components/seo"
 // Custom LinkedIn carousel component
 const TrustpointLinkedInPost = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  // Check if screen is mobile size
+  React.useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   const linkedinPosts = [
     '7407704242054131714', // V0.4.0 Release
@@ -33,52 +46,54 @@ const TrustpointLinkedInPost = () => {
 
   return (
     <div style={{
-      maxWidth: '1000px',
-      margin: '0 auto',
-      padding: '1rem 0'
+      maxWidth: isMobile ? '100%' : '1000px',
+      margin: isMobile ? '0' : '0 auto',
+      padding: isMobile ? '1rem' : '1rem 0'
     }}>
       <div style={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         position: 'relative',
-        maxWidth: '900px',
+        maxWidth: isMobile ? '100%' : '900px',
         margin: '0 auto',
-        padding: '0 80px'
+        padding: isMobile ? '0' : '0 80px'
       }}>
-        {/* Navigation buttons */}
-        <button
-          onClick={prevPost}
-          style={{
-            backgroundColor: 'transparent',
-            border: 'none',
-            width: '60px',
-            height: '60px',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '48px',
-            fontWeight: 'bold',
-            zIndex: 20,
-            transition: 'all 0.3s ease',
-            flexShrink: 0,
-            position: 'relative',
-            padding: '0',
-            color: 'var(--text-primary)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'scale(1.2)';
-            e.target.style.opacity = '0.7';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'scale(1)';
-            e.target.style.opacity = '1';
-          }}
-          aria-label="Previous post"
-        >
-          ‹
-        </button>
+        {/* Navigation buttons - hidden on mobile */}
+        {!isMobile && (
+          <button
+            onClick={prevPost}
+            style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              width: '60px',
+              height: '60px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '48px',
+              fontWeight: 'bold',
+              zIndex: 20,
+              transition: 'all 0.3s ease',
+              flexShrink: 0,
+              position: 'relative',
+              padding: '0',
+              color: 'var(--text-primary)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.2)';
+              e.target.style.opacity = '0.7';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.opacity = '1';
+            }}
+            aria-label="Previous post"
+          >
+            ‹
+          </button>
+        )}
 
         {/* Main carousel container */}
         <div style={{
@@ -90,22 +105,23 @@ const TrustpointLinkedInPost = () => {
           position: 'relative',
           overflow: 'hidden',
           borderRadius: '8px',
-          maxWidth: '504px'
+          maxWidth: isMobile ? '100%' : '504px',
+          width: isMobile ? '100%' : '504px'
         }}>
           <div
             style={{
               display: 'flex',
               transform: `translateX(-${currentIndex * 100}%)`,
               transition: 'transform 0.3s ease-in-out',
-              width: '504px'
+              width: isMobile ? '100%' : '504px'
             }}
           >
             {linkedinPosts.map((activityId, index) => (
-              <div key={activityId} style={{ minWidth: '504px', flexShrink: 0 }}>
+              <div key={activityId} style={{ minWidth: isMobile ? '100%' : '504px', flexShrink: 0 }}>
                 <iframe
                   src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${activityId}`}
                   height="600"
-                  width="504"
+                  width={isMobile ? '100%' : '504'}
                   frameBorder="0"
                   allowFullScreen=""
                   title={`Embedded LinkedIn post ${index + 1}`}
@@ -116,38 +132,41 @@ const TrustpointLinkedInPost = () => {
           </div>
         </div>
 
-        <button
-          onClick={nextPost}
-          style={{
-            backgroundColor: 'transparent',
-            border: 'none',
-            width: '60px',
-            height: '60px',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '48px',
-            fontWeight: 'bold',
-            zIndex: 20,
-            transition: 'all 0.3s ease',
-            flexShrink: 0,
-            position: 'relative',
-            padding: '0',
-            color: 'var(--text-primary)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'scale(1.2)';
-            e.target.style.opacity = '0.7';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'scale(1)';
-            e.target.style.opacity = '1';
-          }}
-          aria-label="Next post"
-        >
-          ›
-        </button>
+        {/* Navigation buttons - hidden on mobile */}
+        {!isMobile && (
+          <button
+            onClick={nextPost}
+            style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              width: '60px',
+              height: '60px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '48px',
+              fontWeight: 'bold',
+              zIndex: 20,
+              transition: 'all 0.3s ease',
+              flexShrink: 0,
+              position: 'relative',
+              padding: '0',
+              color: 'var(--text-primary)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.2)';
+              e.target.style.opacity = '0.7';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.opacity = '1';
+            }}
+            aria-label="Next post"
+          >
+            ›
+          </button>
+        )}
       </div>
 
       {/* Indicators */}
@@ -613,8 +632,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -632,8 +649,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -651,8 +666,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -670,8 +683,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
         </div>
@@ -709,8 +720,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -728,8 +737,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -747,8 +754,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -766,8 +771,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -785,8 +788,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -804,8 +805,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -823,8 +822,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
           <a
@@ -842,8 +839,6 @@ const IndexPage = () => (
                 filter: 'var(--logo-filter)',
                 transition: 'opacity 0.2s ease'
               }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
             />
           </a>
         </div>
