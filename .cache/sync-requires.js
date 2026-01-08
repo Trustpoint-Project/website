@@ -9,6 +9,7 @@ exports.components = {
   "component---src-pages-brand-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/brand.js")),
   "component---src-pages-contact-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/contact.js")),
   "component---src-pages-index-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/index.js")),
+  "component---src-pages-privacy-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/privacy.js")),
   "component---src-pages-resources-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/resources.js")),
   "component---src-pages-roadmap-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/roadmap.js")),
   "component---src-pages-security-js": preferDefault(require("/Users/florianhandke/PycharmProjects/website/src/pages/security.js")),

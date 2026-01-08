@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { ThemeContext } from "./theme-provider"
+import CookieConsent from "./cookie-consent"
 
 import "../styles/theme.css"
 
@@ -696,7 +697,7 @@ const Layout = ({ children }) => {
               </nav>
             </div>
 
-            {/* Company Column */}
+            {/* Organization Column */}
             <div>
               <h4 style={{
                 color: 'var(--footer-text)',
@@ -705,7 +706,7 @@ const Layout = ({ children }) => {
                 marginBottom: '1rem',
                 marginTop: '0'
               }}>
-                Company
+                Organization
               </h4>
               <nav style={{
                 display: 'flex',
@@ -740,10 +741,8 @@ const Layout = ({ children }) => {
                 >
                   Contact
                 </a>
-                <a
-                  href="https://www.campus-schwarzwald.de/datenschutz/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/privacy"
                   style={{
                     color: 'var(--footer-text)',
                     textDecoration: 'none',
@@ -752,8 +751,8 @@ const Layout = ({ children }) => {
                     transition: 'color 0.3s ease'
                   }}
                 >
-                  Privacy
-                </a>
+                  Privacy Policy
+                </Link>
                 <a
                   href="https://www.campus-schwarzwald.de/impressum/"
                   target="_blank"
@@ -768,6 +767,29 @@ const Layout = ({ children }) => {
                 >
                   Imprint
                 </a>
+                <button
+                  onClick={() => {
+                    // Reset cookie consent to show banner again
+                    localStorage.removeItem('cookie-consent')
+                    window.location.reload()
+                  }}
+                  style={{
+                    color: 'var(--footer-text)',
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    fontWeight: '500',
+                    transition: 'color 0.3s ease',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: 0,
+                    textAlign: 'left',
+                    width: 'fit-content',
+                    display: 'block'
+                  }}
+                >
+                  Cookie Settings
+                </button>
               </nav>
             </div>
 
@@ -925,6 +947,7 @@ const Layout = ({ children }) => {
           </a>
         </div>
       )}
+      <CookieConsent />
     </>
   )
 }

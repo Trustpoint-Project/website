@@ -4,6 +4,7 @@ exports.components = {
   "component---src-pages-brand-js": () => import("./../../../src/pages/brand.js" /* webpackChunkName: "component---src-pages-brand-js" */),
   "component---src-pages-contact-js": () => import("./../../../src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-privacy-js": () => import("./../../../src/pages/privacy.js" /* webpackChunkName: "component---src-pages-privacy-js" */),
   "component---src-pages-resources-js": () => import("./../../../src/pages/resources.js" /* webpackChunkName: "component---src-pages-resources-js" */),
   "component---src-pages-roadmap-js": () => import("./../../../src/pages/roadmap.js" /* webpackChunkName: "component---src-pages-roadmap-js" */),
   "component---src-pages-security-js": () => import("./../../../src/pages/security.js" /* webpackChunkName: "component---src-pages-security-js" */),
