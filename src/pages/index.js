@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 // Value Proposition Tabs Component
 const ValuePropositionTabs = () => {
   const [activeTab, setActiveTab] = React.useState('manufacturers')
+  const [hoveredTab, setHoveredTab] = React.useState(null)
 
   const valueProps = {
     manufacturers: {
@@ -51,6 +52,20 @@ const ValuePropositionTabs = () => {
     }
   };
 
+  const getButtonStyle = (key) => ({
+    padding: '1rem 2rem',
+    border: activeTab === key ? '2px solid var(--accent-primary)' : '2px solid var(--border-color)',
+    borderRadius: '8px',
+    backgroundColor: activeTab === key ? '#004aad' : 'var(--bg-primary)',
+    color: activeTab === key ? '#ffffff' : 'var(--text-primary)',
+    fontSize: '1.1rem',
+    fontWeight: activeTab === key ? '600' : '500',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    minWidth: '200px',
+    boxShadow: activeTab === key ? '0 2px 8px rgba(0, 74, 170, 0.3)' : (hoveredTab === key ? '0 2px 4px rgba(0, 74, 170, 0.2)' : 'none'),
+    borderColor: hoveredTab === key && activeTab !== key ? 'var(--accent-primary)' : (activeTab === key ? 'var(--accent-primary)' : 'var(--border-color)')
+  })
 
   return (
     <div>
@@ -66,31 +81,9 @@ const ValuePropositionTabs = () => {
           <button
             key={key}
             onClick={() => setActiveTab(key)}
-            style={{
-              padding: '1rem 2rem',
-              border: activeTab === key ? '2px solid var(--accent-primary)' : '2px solid var(--border-color)',
-              borderRadius: '8px',
-              backgroundColor: activeTab === key ? '#004aad' : 'var(--bg-primary)',
-              color: activeTab === key ? '#ffffff' : 'var(--text-primary)',
-              fontSize: '1.1rem',
-              fontWeight: activeTab === key ? '600' : '500',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              minWidth: '200px',
-              boxShadow: activeTab === key ? '0 2px 8px rgba(0, 74, 170, 0.3)' : 'none'
-            }}
-            onMouseEnter={(e) => {
-              if (activeTab !== key) {
-                e.target.style.borderColor = 'var(--accent-primary)'
-                e.target.style.boxShadow = '0 2px 4px rgba(0, 74, 170, 0.2)'
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (activeTab !== key) {
-                e.target.style.borderColor = 'var(--border-color)'
-                e.target.style.boxShadow = 'none'
-              }
-            }}
+            onMouseEnter={() => setHoveredTab(key)}
+            onMouseLeave={() => setHoveredTab(null)}
+            style={getButtonStyle(key)}
           >
             {value.title}
           </button>
