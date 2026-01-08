@@ -9,7 +9,7 @@
     "gatsby"
   ],
   "scripts": {
-    "build": "gatsby build && sed -i '' 's|https://trustpoint.campus-schwarzwald.de/|https://trustpoint.netlify.app/|g' public/sitemap-*.xml && cp public/sitemap-index.xml public/sitemap.xml",
+    "build": "gatsby build && sed -i 's|https://trustpoint.campus-schwarzwald.de/|https://trustpoint.netlify.app/|g' public/sitemap-*.xml && cp public/sitemap-index.xml public/sitemap.xml",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
