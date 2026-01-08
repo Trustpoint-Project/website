@@ -9,7 +9,7 @@ var plugins = [{
     },{
       name: 'gatsby-plugin-manifest',
       plugin: require('/Users/florianhandke/PycharmProjects/website/node_modules/gatsby-plugin-manifest/gatsby-ssr.js'),
-      options: {"plugins":[],"name":"Trustpoint - Digital Certificate Management","short_name":"Trustpoint","description":"Trustpoint supports you in the management of digital certificates in industrial environments.","start_url":"/","background_color":"#ffffff","theme_color":"#004aad","display":"standalone","icon":"static/logos/trustpoint_favicon_main.png","icons":[{"src":"/logos/trustpoint_favicon_main.png","sizes":"192x192","type":"image/png"},{"src":"/logos/trustpoint_favicon_main.png","sizes":"512x512","type":"image/png"}],"legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"f2e50e848c4daf3b2f153d0e7855d743"},
+      options: {"plugins":[],"name":"Trustpoint - Digital Certificate Management","short_name":"Trustpoint","description":"Trustpoint supports you in the management of digital certificates in industrial environments.","start_url":"/","background_color":"#ffffff","theme_color":"#004aad","display":"standalone","icon":"static/logos/trustpoint_favicon_main_white_bg.png","icons":[{"src":"/logos/trustpoint_favicon_main_white_bg.png","sizes":"192x192","type":"image/png"},{"src":"/logos/trustpoint_favicon_main_white_bg.png","sizes":"512x512","type":"image/png"}],"legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"ef92f4289c09f7fd9f4babd77aea4e55"},
     },{
       name: 'default-site-plugin',
       plugin: require('/Users/florianhandke/PycharmProjects/website/gatsby-ssr.js'),

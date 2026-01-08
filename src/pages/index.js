@@ -351,8 +351,22 @@ const TrustpointLinkedInPost = () => {
   )
 }
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = () => {
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  React.useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
+
+  return (
+    <Layout>
     <Seo
       title="Trustpoint - Open Source PKI for Industrial IoT"
       description="Trustpoint is the trust anchor for mechanical engineering and manufacturing. Secure digital certificate management for industrial environments and IoT devices. Open-source PKI solution."
@@ -920,58 +934,62 @@ const IndexPage = () => (
       </div>
     </section>
 
-    {/* Latest Updates */}
-    <section style={{
-      padding: '4rem 0',
-      backgroundColor: 'var(--bg-primary)'
-    }}>
-        <h2 style={{
-          fontSize: '2rem',
-          fontWeight: '400',
-          color: 'var(--text-primary)',
-          marginBottom: '1rem',
-          textAlign: 'center'
-        }}>
-          Latest Updates
-        </h2>
-        <p style={{
-          fontSize: '1.1rem',
-          color: 'var(--text-secondary)',
-          textAlign: 'center',
-          marginBottom: '2rem',
-          maxWidth: '800px',
-          margin: '0 auto 2rem auto'
-        }}>
-          Stay updated with our latest announcements and community highlights
-        </p>
-        <div style={{
-          borderRadius: '8px',
-          marginBottom: '2rem'
-        }}>
-          <TrustpointLinkedInPost />
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <a
-            href="https://www.linkedin.com/company/99494956"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              padding: '0.75rem 1.5rem',
-              backgroundColor: '#0077b5',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '4px',
-              fontWeight: '500',
-              fontSize: '0.9rem',
-              transition: 'background-color 0.2s ease'
-            }}
-          >
-            Follow us on LinkedIn →
-          </a>
-        </div>
-    </section>
+    {!isMobile && (
+    <>
+      {/* Latest Updates */}
+      <section style={{
+        padding: '4rem 0',
+        backgroundColor: 'var(--bg-primary)'
+      }}>
+          <h2 style={{
+            fontSize: '2rem',
+            fontWeight: '400',
+            color: 'var(--text-primary)',
+            marginBottom: '1rem',
+            textAlign: 'center'
+          }}>
+            Latest Updates
+          </h2>
+          <p style={{
+            fontSize: '1.1rem',
+            color: 'var(--text-secondary)',
+            textAlign: 'center',
+            marginBottom: '2rem',
+            maxWidth: '800px',
+            margin: '0 auto 2rem auto'
+          }}>
+            Stay updated with our latest announcements and community highlights
+          </p>
+          <div style={{
+            borderRadius: '8px',
+            marginBottom: '2rem'
+          }}>
+            <TrustpointLinkedInPost />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <a
+              href="https://www.linkedin.com/company/99494956"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '0.75rem 1.5rem',
+                backgroundColor: '#0077b5',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '4px',
+                fontWeight: '500',
+                fontSize: '0.9rem',
+                transition: 'background-color 0.2s ease'
+              }}
+            >
+              Follow us on LinkedIn →
+            </a>
+          </div>
+      </section>
+    </>
+    )}
 
     {/* Success Stories Section */}
     <section style={{
@@ -1148,5 +1166,6 @@ const IndexPage = () => (
 
   </Layout>
 )
+}
 
 export default IndexPage
