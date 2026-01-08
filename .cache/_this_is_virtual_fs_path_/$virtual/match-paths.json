@@ -1,1 +1,50 @@
-[]
+[
+    {
+        "path": "/about/",
+        "matchPath": "/about/"
+    },
+    {
+        "path": "/brand/",
+        "matchPath": "/brand/"
+    },
+    {
+        "path": "/contact/",
+        "matchPath": "/contact/"
+    },
+    {
+        "path": "/dev-404-page/",
+        "matchPath": "/dev-404-page/"
+    },
+    {
+        "path": "/resources/",
+        "matchPath": "/resources/"
+    },
+    {
+        "path": "/roadmap/",
+        "matchPath": "/roadmap/"
+    },
+    {
+        "path": "/security/",
+        "matchPath": "/security/"
+    },
+    {
+        "path": "/success/",
+        "matchPath": "/success/"
+    },
+    {
+        "path": "/team/",
+        "matchPath": "/team/"
+    },
+    {
+        "path": "/test-404/",
+        "matchPath": "/test-404/"
+    },
+    {
+        "path": "/",
+        "matchPath": "/"
+    },
+    {
+        "path": "/404/",
+        "matchPath": "/*"
+    }
+]

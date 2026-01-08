@@ -18,15 +18,15 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#004aad`,
         display: `standalone`,
-        icon: `static/logos/trustpoint_favicon_main.png`,
+        icon: `static/logos/trustpoint_favicon_main_white_bg.png`,
         icons: [
           {
-            src: `/logos/trustpoint_favicon_main.png`,
+            src: `/logos/trustpoint_favicon_main_white_bg.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/logos/trustpoint_favicon_main.png`,
+            src: `/logos/trustpoint_favicon_main_white_bg.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
