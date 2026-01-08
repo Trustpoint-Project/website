@@ -3,6 +3,160 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+// Value Proposition Tabs Component
+const ValuePropositionTabs = () => {
+  const [activeTab, setActiveTab] = React.useState('manufacturers')
+
+  const valueProps = {
+    manufacturers: {
+      title: 'Device Manufacturers',
+      benefits: [
+        'Embed certificate and identity management directly into your products',
+        'Offer secure onboarding as a built-in product capability',
+        'Extend existing device management solutions with standards-based PKI',
+        'Support secure operation across factory, field, and service phases',
+        'Reduce support cases caused by certificate failures or misconfiguration',
+        'Avoid vendor lock-in while remaining compatible with customer infrastructures'
+      ],
+      description:
+        'Trustpoint can be integrated into devices, machines, or management platforms to provide built-in certificate and identity management. Manufacturers can offer a standards-based security foundation that supports onboarding, operation, service, and reuse across the full product lifecycle—without binding customers to proprietary or cloud-only infrastructures.'
+    },
+
+    integrators: {
+      title: 'System Integrators',
+      benefits: [
+        'Remotely manage certificates in segmented and air-gapped OT networks',
+        'Standardize secure onboarding across vendors, machines, and plants',
+        'Operate PKI-based security without permanent IT or cloud connectivity',
+        'Reduce project risk from manual or ad-hoc certificate handling',
+        'Reuse proven onboarding and lifecycle patterns across projects',
+        'Deliver compliant security architectures without deep PKI expertise'
+      ],
+      description:
+        'Trustpoint enables system integrators to centrally manage device identities and certificates even in restricted or offline industrial environments. By combining user-driven and automated onboarding with lifecycle management, integrators can securely operate and maintain OT infrastructures while respecting real-world network constraints.'
+    },
+
+    operators: {
+      title: 'Operators',
+      benefits: [
+        'Operate secure machine identities with minimal operational effort',
+        'Prevent downtime caused by expired or unmanaged certificates',
+        'Maintain control over identities across vendors and service providers',
+        'Support commissioning, maintenance, and decommissioning workflows',
+        'Improve visibility and auditability of machine identities',
+        'Support compliance with IEC 62443, NIS2, and future regulations'
+      ],
+      description:
+        'Trustpoint helps operators securely manage machine identities throughout the entire lifecycle—from commissioning to decommissioning. Designed for industrial environments, it reduces operational risk while remaining usable in segmented, offline, and multi-vendor OT networks.'
+    }
+  };
+
+
+  return (
+    <div>
+      {/* Tab Navigation */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: '3rem',
+        flexWrap: 'wrap',
+        gap: '1rem'
+      }}>
+        {Object.entries(valueProps).map(([key, value]) => (
+          <button
+            key={key}
+            onClick={() => setActiveTab(key)}
+            style={{
+              padding: '1rem 2rem',
+              border: activeTab === key ? '2px solid var(--accent-primary)' : '2px solid var(--border-color)',
+              borderRadius: '8px',
+              backgroundColor: activeTab === key ? '#004aad' : 'var(--bg-primary)',
+              color: activeTab === key ? '#ffffff' : 'var(--text-primary)',
+              fontSize: '1.1rem',
+              fontWeight: activeTab === key ? '600' : '500',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              minWidth: '200px',
+              boxShadow: activeTab === key ? '0 2px 8px rgba(0, 74, 170, 0.3)' : 'none'
+            }}
+            onMouseEnter={(e) => {
+              if (activeTab !== key) {
+                e.target.style.borderColor = 'var(--accent-primary)'
+                e.target.style.boxShadow = '0 2px 4px rgba(0, 74, 170, 0.2)'
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (activeTab !== key) {
+                e.target.style.borderColor = 'var(--border-color)'
+                e.target.style.boxShadow = 'none'
+              }
+            }}
+          >
+            {value.title}
+          </button>
+        ))}
+      </div>
+
+      {/* Content Display */}
+      <div style={{
+        backgroundColor: 'var(--bg-secondary)',
+        borderRadius: '12px',
+        padding: '3rem',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+        textAlign: 'center'
+      }}>
+        <h3 style={{
+          fontSize: '1.8rem',
+          fontWeight: '500',
+          color: 'var(--text-primary)',
+          marginBottom: '1rem'
+        }}>
+          {valueProps[activeTab].title}
+        </h3>
+
+        <p style={{
+          fontSize: '1.2rem',
+          color: 'var(--text-secondary)',
+          lineHeight: '1.6',
+          marginBottom: '2rem',
+          maxWidth: '600px',
+          margin: '0 auto 2rem auto'
+        }}>
+          {valueProps[activeTab].description}
+        </p>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem',
+          marginTop: '2rem'
+        }}>
+          {valueProps[activeTab].benefits.map((benefit, index) => (
+            <div
+              key={index}
+              style={{
+                padding: '1.5rem',
+                backgroundColor: 'var(--bg-primary)',
+                borderRadius: '8px',
+                borderLeft: '4px solid var(--accent-primary)',
+                textAlign: 'left'
+              }}
+            >
+              <p style={{
+                color: 'var(--text-primary)',
+                lineHeight: '1.5',
+                margin: 0
+              }}>
+                {benefit}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // Custom LinkedIn carousel component
 const TrustpointLinkedInPost = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0)
@@ -298,7 +452,7 @@ const IndexPage = () => (
       backgroundColor: 'var(--bg-primary)'
     }}>
       <div style={{
-        maxWidth: '800px',
+        maxWidth: '1200px',
         margin: '0 auto',
         padding: '0 2rem'
       }}>
@@ -316,68 +470,126 @@ const IndexPage = () => (
           color: 'var(--text-secondary)',
           marginBottom: '2rem',
           lineHeight: '1.6',
-          maxWidth: '600px',
+          maxWidth: '800px',
           margin: '0 auto 2rem auto'
         }}>
           Trustpoint supports organizations in the secure management of digital certificates in industrial environments.
         </p>
+
+        {/* Free & Open Source Benefits */}
+        <div style={{
+          backgroundColor: 'var(--bg-secondary)',
+          borderRadius: '12px',
+          padding: '2rem',
+          marginBottom: '2rem',
+          maxWidth: '1200px',
+          margin: '0 auto 2rem auto',
+          border: '1px solid var(--border-color)'
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            alignItems: 'center',
+            marginBottom: '1.5rem'
+          }}>
+            {/* Left Column - Title */}
+            <div style={{ textAlign: 'center' }}>
+              <h3 style={{
+                fontSize: '1.8rem',
+                fontWeight: '600',
+                color: 'var(--text-primary)',
+                margin: '0'
+              }}>
+                Free & Open Source 
+              </h3>
+            </div>
+
+            {/* Middle Column - Features */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem'
+            }}>
+              <div style={{ textAlign: 'left', fontSize: '0.95rem', color: 'var(--text-primary)' }}>
+                <span style={{ color: '#10b981' }}>✓</span> Air-gapped Certificate Management
+              </div>
+              <div style={{ textAlign: 'left', fontSize: '0.95rem', color: 'var(--text-primary)' }}>
+                <span style={{ color: '#10b981' }}>✓</span> REST, CMP and EST support
+              </div>
+              <div style={{ textAlign: 'left', fontSize: '0.95rem', color: 'var(--text-primary)' }}>
+                <span style={{ color: '#10b981' }}>✓</span> Workflow automation
+              </div>
+              <div style={{ textAlign: 'left', fontSize: '0.95rem', color: 'var(--text-primary)' }}>
+                <span style={{ color: '#10b981' }}>✓</span> Docker container
+              </div>
+              <div style={{ textAlign: 'left', fontSize: '0.95rem', color: 'var(--text-primary)' }}>
+                <span style={{ color: '#10b981' }}>✓</span> HSM support
+              </div>
+            </div>
+
+            {/* Right Column - Tagline */}
+            <div style={{ textAlign: 'center' }}>
+              <p style={{
+                fontSize: '1rem',
+                color: 'var(--accent-primary)',
+                fontWeight: '500',
+                margin: '0 0 1rem 0'
+              }}>
+                Easy operation.<br />Open standards.
+              </p>
+              <Link
+                to="/about"
+                style={{
+                  display: 'inline-block',
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: 'var(--brand-primary)',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                  fontWeight: '500',
+                  transition: 'background-color 0.2s ease',
+                  fontSize: '0.9rem'
+                }}
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Success Stories Link */}
+      <div style={{
+        textAlign: 'center',
+        marginTop: '2rem',
+        marginBottom: '2rem'
+      }}>
         <Link
-          to="/about"
+          to="/success"
           style={{
-            display: 'inline-block',
-            padding: '0.75rem 1.5rem',
-            backgroundColor: 'var(--brand-primary)',
-            color: 'white',
+            color: 'var(--brand-primary)',
             textDecoration: 'none',
-            borderRadius: '4px',
-            fontWeight: '500',
-            transition: 'background-color 0.2s ease'
+            fontWeight: '700',
+            fontSize: '1.3rem',
+            transition: 'color 0.2s ease'
           }}
+          onMouseEnter={(e) => e.target.style.color = 'var(--link-color)'}
+          onMouseLeave={(e) => e.target.style.color = 'var(--brand-primary)'}
         >
-          Learn More
+          Success stories →
         </Link>
       </div>
+
     </section>
 
-    {/* Mission Section */}
-    <section style={{
-      padding: '4rem 0',
-      backgroundColor: 'var(--bg-secondary)'
-    }}>
-      <div style={{
-        maxWidth: '800px',
-        margin: '0 auto',
-        padding: '0 2rem'
-      }}>
-        <h2 style={{
-          fontSize: '2rem',
-          fontWeight: '400',
-          color: 'var(--text-primary)',
-          marginBottom: '1.5rem',
-          textAlign: 'center'
-        }}>
-          Our Mission
-        </h2>
-        <p style={{
-          fontSize: '1.1rem',
-          color: 'var(--text-tertiary)',
-          lineHeight: '1.7',
-          textAlign: 'center'
-        }}>
-          Trustpoint provides a comprehensive solution for certificate lifecycle management in industrial settings.
-          We enable organizations to implement robust security mechanisms through standardized interfaces,
-          ensuring trust and reliability in digital certificate ecosystems.
-        </p>
-      </div>
-    </section>
-
-    {/* Key Focus Areas */}
+    {/* Value Proposition Section */}
     <section style={{
       padding: '4rem 0',
       backgroundColor: 'var(--bg-primary)'
     }}>
       <div style={{
-        maxWidth: '1000px',
+        maxWidth: '1400px',
         margin: '0 auto',
         padding: '0 2rem'
       }}>
@@ -388,147 +600,10 @@ const IndexPage = () => (
           marginBottom: '3rem',
           textAlign: 'center'
         }}>
-          Key Capabilities
+          Value for Your Business
         </h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '2rem',
-          marginBottom: '2rem'
-        }}>
-          <div style={{
-            padding: '2rem',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{
-              fontSize: '1.25rem',
-              fontWeight: '500',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Certificate Lifecycle Management
-            </h3>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              Complete lifecycle support for digital certificates from issuance to revocation.
-            </p>
-          </div>
-          <div style={{
-            padding: '2rem',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{
-              fontSize: '1.25rem',
-              fontWeight: '500',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Industrial Standards
-            </h3>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              Support for CMP, EST, and REST protocols ensuring interoperability.
-            </p>
-          </div>
-          <div style={{
-            padding: '2rem',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{
-              fontSize: '1.25rem',
-              fontWeight: '500',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Docker Deployment
-            </h3>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              Easy deployment and scaling through containerized architecture.
-            </p>
-          </div>
-          <div style={{
-            padding: '2rem',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{
-              fontSize: '1.25rem',
-              fontWeight: '500',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Open Source
-            </h3>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              MIT licensed solution built with Python Django for transparency and community collaboration.
-            </p>
-          </div>
-          <div style={{
-            padding: '2rem',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{
-              fontSize: '1.25rem',
-              fontWeight: '500',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              PKCS#11 Support
-            </h3>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              Hardware Security Module (HSM) integration through PKCS#11 standard for enhanced security.
-            </p>
-          </div>
-          <div style={{
-            padding: '2rem',
-            backgroundColor: 'var(--bg-secondary)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            textAlign: 'center'
-          }}>
-            <h3 style={{
-              fontSize: '1.25rem',
-              fontWeight: '500',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Workflow Engine
-            </h3>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              Advanced workflow automation with manual approval processes, webhooks, and email notifications.
-            </p>
-          </div>
-        </div>
+
+        <ValuePropositionTabs />
       </div>
     </section>
 
@@ -538,7 +613,7 @@ const IndexPage = () => (
       backgroundColor: 'var(--bg-secondary)'
     }}>
       <div style={{
-        maxWidth: '800px',
+        maxWidth: '1200px',
         margin: '0 auto',
         padding: '0 2rem',
         textAlign: 'center'
@@ -864,14 +939,13 @@ const IndexPage = () => (
           color: 'var(--text-secondary)',
           textAlign: 'center',
           marginBottom: '2rem',
-          maxWidth: '600px',
+          maxWidth: '800px',
           margin: '0 auto 2rem auto'
         }}>
           Stay updated with our latest announcements and community highlights
         </p>
         <div style={{
           borderRadius: '8px',
-          borderLeft: '4px solid var(--brand-primary)',
           marginBottom: '2rem'
         }}>
           <TrustpointLinkedInPost />
@@ -897,6 +971,179 @@ const IndexPage = () => (
             Follow us on LinkedIn →
           </a>
         </div>
+    </section>
+
+    {/* Success Stories Section */}
+    <section style={{
+      padding: '4rem 0',
+      backgroundColor: 'var(--bg-secondary)'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem'
+      }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '400',
+          color: 'var(--text-primary)',
+          textAlign: 'center',
+          marginBottom: '3rem'
+        }}>
+          Success Stories
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem',
+          marginBottom: '2rem'
+        }}>
+          {/* Case Study 1 */}
+          <div style={{
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: '12px',
+            padding: '2rem',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              marginBottom: '1rem'
+            }}>
+              <span style={{
+                backgroundColor: 'var(--accent-primary)',
+                color: 'white',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '20px',
+                fontSize: '0.8rem',
+                fontWeight: '500'
+              }}>
+                Network Infrastructure
+              </span>
+            </div>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              Secure Onboarding - Belden Hirschmann
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.6',
+              fontSize: '0.95rem'
+            }}>
+              A Belden Hirschmann BOBCAT Switch is securely onboarded using its Initial Device Identifier (IDevID) for authentication. Trustpoint automates verification and issues domain-specific credentials.
+            </p>
+          </div>
+
+          {/* Case Study 2 */}
+          <div style={{
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: '12px',
+            padding: '2rem',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              marginBottom: '1rem'
+            }}>
+              <span style={{
+                backgroundColor: 'var(--accent-primary)',
+                color: 'white',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '20px',
+                fontSize: '0.8rem',
+                fontWeight: '500'
+              }}>
+                Industrial Automation
+              </span>
+            </div>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              OPC UA Certificate Management - PHOENIX CONTACT
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.6',
+              fontSize: '0.95rem'
+            }}>
+              A PHOENIX CONTACT PLCnext Technology device is securely provisioned with digital certificates using an OPC UA Global Discovery Server (GDS) and Trustpoint.
+            </p>
+          </div>
+
+          {/* Case Study 3 */}
+          <div style={{
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: '12px',
+            padding: '2rem',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              marginBottom: '1rem'
+            }}>
+              <span style={{
+                backgroundColor: 'var(--accent-primary)',
+                color: 'white',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '20px',
+                fontSize: '0.8rem',
+                fontWeight: '500'
+              }}>
+                Industrial Control
+              </span>
+            </div>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              EST Certificate Management - WAGO
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.6',
+              fontSize: '0.95rem'
+            }}>
+              A WAGO Compact Controller 100 integrates native certificate management using the EST protocol, allowing secure certificate enrollment and maintenance.
+            </p>
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center' }}>
+          <Link
+            to="/success"
+            style={{
+              display: 'inline-block',
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'var(--brand-primary)',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '4px',
+              fontWeight: '500',
+              transition: 'background-color 0.2s ease'
+            }}
+          >
+            View All Success Stories →
+          </Link>
+        </div>
+      </div>
     </section>
 
   </Layout>

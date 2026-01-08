@@ -72,7 +72,7 @@ const ImpressionCarousel = () => {
 
   return (
     <div style={{
-      maxWidth: isMobile ? '100%' : '1000px',
+      maxWidth: isMobile ? '100%' : '1400px',
       margin: isMobile ? '0' : '0 auto',
       padding: isMobile ? '1rem' : '1rem 0'
     }}>
@@ -81,7 +81,7 @@ const ImpressionCarousel = () => {
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        maxWidth: isMobile ? '100%' : '900px',
+        maxWidth: isMobile ? '100%' : '1300px',
         margin: '0 auto',
         padding: isMobile ? '0' : '0 80px'
       }}>
@@ -127,14 +127,14 @@ const ImpressionCarousel = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          minHeight: '400px'
+          minHeight: '500px'
         }}>
           <img
             src={currentImpressions[currentIndex].src}
             alt={`Trustpoint impression ${currentIndex + 1}`}
             style={{
               maxWidth: '100%',
-              maxHeight: '400px',
+              maxHeight: '500px',
               width: 'auto',
               height: 'auto',
               borderRadius: '12px',
@@ -670,6 +670,24 @@ const AboutPage = () => (
             <p style={styles.featureText}>
               MIT licensed solution built with Python Django, fostering transparency,
               community collaboration, and continuous improvement.
+            </p>
+          </div>
+          <div style={styles.featureCard}>
+            <h3 style={styles.featureTitle}>
+              Hardware Security Module Support
+            </h3>
+            <p style={styles.featureText}>
+              PKCS#11 standard integration for enhanced security through Hardware Security
+              Module (HSM) support, ensuring cryptographic operations remain protected.
+            </p>
+          </div>
+          <div style={styles.featureCard}>
+            <h3 style={styles.featureTitle}>
+              Advanced Workflow Engine
+            </h3>
+            <p style={styles.featureText}>
+              Comprehensive workflow automation with manual approval processes, webhooks,
+              and email notifications for streamlined certificate management operations.
             </p>
           </div>
         </div>

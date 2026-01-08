@@ -472,7 +472,7 @@ const Layout = ({ children }) => {
             transition: 'color 0.3s ease'
           }}>
             <img
-              src={theme === 'dark' ? "/logos/trustpoint_logo_horizontal_inverted.svg" : "/logos/trustpoint_logo_horizontal_main.svg"}
+              src="/logos/trustpoint_logo_horizontal_inverted.svg"
               alt="Trustpoint"
               style={{
                 height: '30px',
@@ -547,8 +547,8 @@ const Layout = ({ children }) => {
             >
               Brand
             </Link>
-            <a
-              href="/api/"
+            <Link
+              to="/success"
               style={{
                 color: 'var(--footer-text)',
                 textDecoration: 'none',
@@ -557,8 +557,8 @@ const Layout = ({ children }) => {
                 transition: 'color 0.3s ease'
               }}
             >
-              API
-            </a>
+              Success Stories
+            </Link>
             <a
               href="mailto:trustpoint@campus-schwarzwald.de"
               style={{
