@@ -5,7 +5,7 @@ import { ThemeContext } from "../components/theme-provider"
 
 // Impression Carousel Component
 const ImpressionCarousel = () => {
-  const { theme } = React.useContext(ThemeContext)
+  const { theme, mounted } = React.useContext(ThemeContext)
   const [currentIndex, setCurrentIndex] = React.useState(0)
   const [isMobile, setIsMobile] = React.useState(false)
 
@@ -34,10 +34,16 @@ const ImpressionCarousel = () => {
     { src: '/images/impressions/20260107_trustpoint_impression_workflow_light.png', theme: 'light' }
   ]
 
-  // Filter impressions based on current theme
-  const currentImpressions = allImpressions.filter(impression =>
-    impression.theme === 'both' || impression.theme === theme
-  )
+  // Filter impressions based on current theme - only after mount to avoid hydration mismatch
+  const currentImpressions = React.useMemo(() => {
+    if (!mounted) {
+      // During SSR and initial render, show all impressions
+      return allImpressions
+    }
+    return allImpressions.filter(impression =>
+      impression.theme === 'both' || impression.theme === theme
+    )
+  }, [theme, mounted])
 
   // Auto-play functionality
   React.useEffect(() => {

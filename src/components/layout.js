@@ -7,14 +7,18 @@ import CookieConsent from "./cookie-consent"
 import "../styles/theme.css"
 
 const Layout = ({ children }) => {
-  const { theme, toggleTheme } = React.useContext(ThemeContext)
+  const { theme, toggleTheme, mounted } = React.useContext(ThemeContext)
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const [isMobile, setIsMobile] = React.useState(false)
+  const [contactLinkHovered, setContactLinkHovered] = React.useState(false)
+  const [currentYear, setCurrentYear] = React.useState('2026')
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
-  // Check if screen is mobile size
+  // Check if screen is mobile size - only after mount to avoid hydration mismatch
   React.useEffect(() => {
+    if (!mounted) return
+
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -23,7 +27,7 @@ const Layout = ({ children }) => {
     window.addEventListener('resize', checkIsMobile)
 
     return () => window.removeEventListener('resize', checkIsMobile)
-  }, [])
+  }, [mounted])
 
   // Close mobile menu when clicking outside
   React.useEffect(() => {
@@ -41,6 +45,11 @@ const Layout = ({ children }) => {
       document.removeEventListener('click', handleClickOutside)
     }
   }, [isMenuOpen])
+
+  // Set current year on client side to avoid hydration mismatch
+  React.useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+  }, [])
 
   return (
     <>
@@ -481,7 +490,7 @@ const Layout = ({ children }) => {
                 transition: 'filter 0.3s ease'
               }}
             />
-            <span>© {new Date().getFullYear()} Trustpoint · Campus Schwarzwald</span>
+            <span>© {currentYear} Trustpoint · Campus Schwarzwald</span>
           </div>
           <div style={{
             display: 'grid',
@@ -716,28 +725,20 @@ const Layout = ({ children }) => {
                 <a
                   href="mailto:trustpoint@campus-schwarzwald.de"
                   style={{
-                    color: 'var(--footer-text)',
+                    color: contactLinkHovered ? 'white' : 'var(--footer-text)',
                     textDecoration: 'none',
                     fontSize: '0.9rem',
                     fontWeight: '500',
                     padding: '0.25rem 0.75rem',
-                    border: '1px solid var(--footer-text)',
+                    border: `1px solid ${contactLinkHovered ? 'var(--link-color)' : 'var(--footer-text)'}`,
                     borderRadius: '4px',
                     transition: 'all 0.2s ease',
                     display: 'inline-block',
-                    backgroundColor: 'transparent',
+                    backgroundColor: contactLinkHovered ? 'var(--link-color)' : 'transparent',
                     width: 'fit-content'
                   }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = 'var(--link-color)';
-                    e.target.style.borderColor = 'var(--link-color)';
-                    e.target.style.color = 'white';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = 'transparent';
-                    e.target.style.borderColor = 'var(--footer-text)';
-                    e.target.style.color = 'var(--footer-text)';
-                  }}
+                  onMouseEnter={() => setContactLinkHovered(true)}
+                  onMouseLeave={() => setContactLinkHovered(false)}
                 >
                   Contact
                 </a>

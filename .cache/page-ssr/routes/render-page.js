@@ -8237,10 +8237,10 @@ if (true) {
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(480);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-const ThemeContext=/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();const ThemeProvider=({children})=>{const{0:theme,1:setTheme}=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('light');(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{// Check for saved theme preference or default to light mode
+const ThemeContext=/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();const ThemeProvider=({children})=>{const{0:theme,1:setTheme}=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('light');const{0:mounted,1:setMounted}=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);const{0:themeInitialized,1:setThemeInitialized}=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{setMounted(true);// Check for saved theme preference or default to light mode
 const savedTheme=localStorage.getItem('theme');if(savedTheme){setTheme(savedTheme);}else{// Check system preference
-const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;setTheme(prefersDark?'dark':'light');}},[]);(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{// Update localStorage and document attribute when theme changes
-localStorage.setItem('theme',theme);document.documentElement.setAttribute('data-theme',theme);},[theme]);const toggleTheme=()=>{setTheme(prevTheme=>prevTheme==='light'?'dark':'light');};return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ThemeContext.Provider,{value:{theme,toggleTheme}},children);};
+const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;setTheme(prefersDark?'dark':'light');}setThemeInitialized(true);},[]);(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{if(!mounted||!themeInitialized)return;// Update localStorage and document attribute when theme changes
+localStorage.setItem('theme',theme);document.documentElement.setAttribute('data-theme',theme);},[theme,mounted,themeInitialized]);const toggleTheme=()=>{setTheme(prevTheme=>prevTheme==='light'?'dark':'light');};return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ThemeContext.Provider,{value:{theme,toggleTheme,mounted}},children);};
 
 /***/ }),
 

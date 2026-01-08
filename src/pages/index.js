@@ -152,6 +152,7 @@ const ValuePropositionTabs = () => {
 
 const IndexPage = () => {
   const [isMobile, setIsMobile] = React.useState(false)
+  const [successLinkHovered, setSuccessLinkHovered] = React.useState(false)
 
   React.useEffect(() => {
     const checkIsMobile = () => {
@@ -381,14 +382,14 @@ const IndexPage = () => {
         <Link
           to="/success"
           style={{
-            color: 'var(--brand-primary)',
+            color: successLinkHovered ? 'var(--link-color)' : 'var(--brand-primary)',
             textDecoration: 'none',
             fontWeight: '700',
             fontSize: '1.3rem',
             transition: 'color 0.2s ease'
           }}
-          onMouseEnter={(e) => e.target.style.color = 'var(--link-color)'}
-          onMouseLeave={(e) => e.target.style.color = 'var(--brand-primary)'}
+          onMouseEnter={() => setSuccessLinkHovered(true)}
+          onMouseLeave={() => setSuccessLinkHovered(false)}
         >
           Success stories →
         </Link>

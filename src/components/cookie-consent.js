@@ -2,6 +2,9 @@ import * as React from "react"
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = React.useState(false)
+  const [acceptAllHovered, setAcceptAllHovered] = React.useState(false)
+  const [acceptNecessaryHovered, setAcceptNecessaryHovered] = React.useState(false)
+  const [customizeHovered, setCustomizeHovered] = React.useState(false)
   const [preferences, setPreferences] = React.useState({
     necessary: true, // Always true, can't be disabled
     analytics: false,
@@ -220,22 +223,16 @@ const CookieConsent = () => {
             onClick={acceptNecessaryOnly}
             style={{
               padding: '0.5rem 1rem',
-              backgroundColor: 'transparent',
-              color: 'var(--text-secondary)',
+              backgroundColor: acceptNecessaryHovered ? 'var(--text-secondary)' : 'transparent',
+              color: acceptNecessaryHovered ? 'white' : 'var(--text-secondary)',
               border: '1px solid var(--text-secondary)',
               borderRadius: '4px',
               cursor: 'pointer',
               fontSize: '0.9rem',
               transition: 'all 0.2s ease'
             }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = 'var(--text-secondary)'
-              e.target.style.color = 'white'
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'transparent'
-              e.target.style.color = 'var(--text-secondary)'
-            }}
+            onMouseEnter={() => setAcceptNecessaryHovered(true)}
+            onMouseLeave={() => setAcceptNecessaryHovered(false)}
           >
             Necessary Only
           </button>
@@ -243,22 +240,16 @@ const CookieConsent = () => {
             onClick={savePreferences}
             style={{
               padding: '0.5rem 1rem',
-              backgroundColor: 'transparent',
-              color: 'var(--text-secondary)',
+              backgroundColor: customizeHovered ? 'var(--text-secondary)' : 'transparent',
+              color: customizeHovered ? 'white' : 'var(--text-secondary)',
               border: '1px solid var(--text-secondary)',
               borderRadius: '4px',
               cursor: 'pointer',
               fontSize: '0.9rem',
               transition: 'all 0.2s ease'
             }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = 'var(--text-secondary)'
-              e.target.style.color = 'white'
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'transparent'
-              e.target.style.color = 'var(--text-secondary)'
-            }}
+            onMouseEnter={() => setCustomizeHovered(true)}
+            onMouseLeave={() => setCustomizeHovered(false)}
           >
             Save Preferences
           </button>
@@ -266,7 +257,7 @@ const CookieConsent = () => {
             onClick={acceptAll}
             style={{
               padding: '0.5rem 1rem',
-              backgroundColor: 'var(--link-color)',
+              backgroundColor: acceptAllHovered ? 'var(--link-hover)' : 'var(--link-color)',
               color: 'white',
               border: 'none',
               borderRadius: '4px',
@@ -275,8 +266,8 @@ const CookieConsent = () => {
               fontWeight: '500',
               transition: 'background-color 0.2s ease'
             }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--link-hover)'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--link-color)'}
+            onMouseEnter={() => setAcceptAllHovered(true)}
+            onMouseLeave={() => setAcceptAllHovered(false)}
           >
             Accept All
           </button>
