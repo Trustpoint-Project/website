@@ -11,6 +11,7 @@ const ValuePropositionTabs = () => {
   const valueProps = {
     manufacturers: {
       title: 'Device Manufacturers',
+      image: '/images/trustpoint_device_manufacturer.svg',
       benefits: [
         'Embed certificate and identity management directly into your products',
         'Offer secure onboarding as a built-in product capability',
@@ -25,6 +26,7 @@ const ValuePropositionTabs = () => {
 
     integrators: {
       title: 'System Integrators',
+      image: '/images/trustpoint_system_integrator.svg',
       benefits: [
         'Remotely manage certificates in segmented and air-gapped OT networks',
         'Standardize secure onboarding across vendors, machines, and plants',
@@ -39,6 +41,7 @@ const ValuePropositionTabs = () => {
 
     operators: {
       title: 'Operators',
+      image: '/images/trustpoint_operator.svg',
       benefits: [
         'Operate secure machine identities with minimal operational effort',
         'Prevent downtime caused by expired or unmanaged certificates',
@@ -145,25 +148,30 @@ const ValuePropositionTabs = () => {
             </div>
           ))}
         </div>
+
+        {valueProps[activeTab].image && (
+          <div style={{
+            marginTop: '3rem',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <img
+              src={valueProps[activeTab].image}
+              alt={`${valueProps[activeTab].title} illustration`}
+              style={{
+                maxWidth: '100%',
+                height: 'auto'
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   )
 }
 
 const IndexPage = () => {
-  const [isMobile, setIsMobile] = React.useState(false)
   const [successLinkHovered, setSuccessLinkHovered] = React.useState(false)
-
-  React.useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-
-    checkIsMobile()
-    window.addEventListener('resize', checkIsMobile)
-
-    return () => window.removeEventListener('resize', checkIsMobile)
-  }, [])
 
   return (
     <Layout>
@@ -258,6 +266,48 @@ const IndexPage = () => {
       }
     })}
     </script>
+
+    {/* Trade Fair Banner */}
+    <div style={{
+      backgroundColor: 'var(--bg-primary)',
+      padding: '1rem 0',
+      textAlign: 'center',
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem'
+      }}>
+        <p style={{
+          fontSize: '1.1rem',
+          color: 'var(--text-secondary)',
+          marginBottom: '1rem',
+          marginTop: '0'
+        }}>
+          Visit us at All About Automation Friedrichshafen 2026
+        </p>
+        <a
+          href="https://www.friedrichshafen.allaboutautomation.de/de/exhibitor/trustpoint/?_gl=1*i8mscw*_up*MQ..*_ga*NDYwNDk4NzY3LjE3Njk0MzE2NTU.*_ga_ZTGSPGW1QL*czE3Njk0MzE2NTQkbzEkZzAkdDE3Njk0MzE2NTQkajYwJGwwJGgw"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            textDecoration: 'none',
+            cursor: 'pointer'
+          }}
+        >
+          <img
+            src="/images/events/2026_trustpoint_all_about_automation.svg"
+            alt="Trustpoint at All About Automation Friedrichshafen 2026"
+            style={{
+              width: '100%',
+              height: 'auto',
+              transition: 'opacity 0.2s ease'
+            }}
+          />
+        </a>
+      </div>
+    </div>
 
     {/* Hero Section */}
     <section style={{

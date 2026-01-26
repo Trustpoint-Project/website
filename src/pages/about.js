@@ -43,7 +43,7 @@ const ImpressionCarousel = () => {
     return allImpressions.filter(impression =>
       impression.theme === 'both' || impression.theme === theme
     )
-  }, [theme, mounted])
+  }, [theme, mounted, allImpressions])
 
   // Auto-play functionality
   React.useEffect(() => {
