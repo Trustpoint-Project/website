@@ -627,7 +627,7 @@ const AboutPage = () => (
         </p>
         <div style={styles.architectureImageContainer}>
           <img
-            src="/images/trustpoint_architecture.svg"
+            src="/images/trustpoint_architecture_v2.svg"
             alt="Trustpoint Architecture Overview"
             style={styles.architectureImage}
           />

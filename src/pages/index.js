@@ -11,7 +11,7 @@ const ValuePropositionTabs = () => {
   const valueProps = {
     manufacturers: {
       title: 'Device Manufacturers',
-      image: '/images/trustpoint_device_manufacturer.svg',
+      image: '/images/purdue_trustpoint_device_manufacturer.svg',
       benefits: [
         'Embed certificate and identity management directly into your products',
         'Offer secure onboarding as a built-in product capability',
@@ -26,7 +26,7 @@ const ValuePropositionTabs = () => {
 
     integrators: {
       title: 'System Integrators',
-      image: '/images/trustpoint_system_integrator.svg',
+      image: '/images/purdue_trustpoint_integrator.svg',
       benefits: [
         'Remotely manage certificates in segmented and air-gapped OT networks',
         'Standardize secure onboarding across vendors, machines, and plants',
@@ -41,7 +41,7 @@ const ValuePropositionTabs = () => {
 
     operators: {
       title: 'Operators',
-      image: '/images/trustpoint_operator.svg',
+      image: '/images/purdue_trustpoint_operator.svg',
       benefits: [
         'Operate secure machine identities with minimal operational effort',
         'Prevent downtime caused by expired or unmanaged certificates',
