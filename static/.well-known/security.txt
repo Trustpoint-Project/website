@@ -1,0 +1,4 @@
+Contact: https://github.com/Trustpoint-Project/trustpoint/security/advisories/new
+Expires: 2027-01-27T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://trustpoint.org/.well-known/security.txt

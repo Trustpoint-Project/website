@@ -7,11 +7,12 @@ import Seo from "../components/seo"
 const ValuePropositionTabs = () => {
   const [activeTab, setActiveTab] = React.useState('manufacturers')
   const [hoveredTab, setHoveredTab] = React.useState(null)
+  const [bornBefore1990, setBornBefore1990] = React.useState(false)
 
   const valueProps = {
     manufacturers: {
       title: 'Device Manufacturers',
-      image: '/images/purdue_trustpoint_device_manufacturer.svg',
+      image: bornBefore1990 ? '/images/purdue_trustpoint_device_manufacturer.svg' : '/images/trustpoint_device_manufacturer.svg',
       benefits: [
         'Embed certificate and identity management directly into your products',
         'Offer secure onboarding as a built-in product capability',
@@ -26,7 +27,7 @@ const ValuePropositionTabs = () => {
 
     integrators: {
       title: 'System Integrators',
-      image: '/images/purdue_trustpoint_integrator.svg',
+      image: bornBefore1990 ? '/images/purdue_trustpoint_integrator.svg' : '/images/trustpoint_integrator.svg',
       benefits: [
         'Remotely manage certificates in segmented and air-gapped OT networks',
         'Standardize secure onboarding across vendors, machines, and plants',
@@ -41,7 +42,7 @@ const ValuePropositionTabs = () => {
 
     operators: {
       title: 'Operators',
-      image: '/images/purdue_trustpoint_operator.svg',
+      image: bornBefore1990 ? '/images/purdue_trustpoint_operator.svg' : '/images/trustpoint_operator.svg',
       benefits: [
         'Operate secure machine identities with minimal operational effort',
         'Prevent downtime caused by expired or unmanaged certificates',
@@ -147,6 +148,32 @@ const ValuePropositionTabs = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '2rem', marginBottom: '1rem' }}>
+          <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
+            <input type="checkbox" checked={bornBefore1990} onChange={(e) => setBornBefore1990(e.target.checked)} style={{ display: 'none' }} />
+            <span style={{
+              position: 'relative',
+              width: '50px',
+              height: '24px',
+              backgroundColor: bornBefore1990 ? '#004aad' : '#ccc',
+              borderRadius: '24px',
+              transition: 'background-color 0.3s'
+            }}>
+              <span style={{
+                position: 'absolute',
+                top: '2px',
+                left: bornBefore1990 ? '26px' : '2px',
+                width: '20px',
+                height: '20px',
+                backgroundColor: 'white',
+                borderRadius: '50%',
+                transition: 'left 0.3s'
+              }}></span>
+            </span>
+            <span style={{ marginLeft: '0.5rem', fontSize: '1.1rem', color: 'var(--text-primary)' }}>Born before 1990</span>
+          </label>
         </div>
 
         {valueProps[activeTab].image && (
