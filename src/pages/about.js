@@ -504,6 +504,29 @@ const styles = {
     textAlign: 'center',
     marginBottom: '3rem',
     lineHeight: '1.7'
+  },
+  explanationContainer: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '2rem',
+    marginBottom: '3rem'
+  },
+  explanationItem: {
+    backgroundColor: 'var(--bg-secondary)',
+    padding: '2rem',
+    borderRadius: '8px',
+    border: '1px solid var(--border-color)'
+  },
+  explanationTitle: {
+    fontSize: '1.3rem',
+    fontWeight: '600',
+    color: 'var(--text-primary)',
+    marginBottom: '1rem'
+  },
+  explanationText: {
+    fontSize: '1rem',
+    color: 'var(--text-secondary)',
+    lineHeight: '1.6'
   }
 }
 
@@ -811,6 +834,22 @@ const AboutPage = () => (
             alt="Trustpoint Operation Modes - RA and CA"
             style={styles.architectureImage}
           />
+        </div>
+        <div style={styles.explanationContainer}>
+          <div style={styles.explanationItem}>
+            <h3 style={styles.explanationTitle}>Registration Authority (RA)</h3>
+            <p style={styles.explanationText}>
+              The RA handles certificate requests from devices and users, performing identity validation,
+              policy enforcement, and initial approval before forwarding requests to the CA for issuance.
+            </p>
+          </div>
+          <div style={styles.explanationItem}>
+            <h3 style={styles.explanationTitle}>Certificate Authority (CA)</h3>
+            <p style={styles.explanationText}>
+              The CA is responsible for generating, signing, and issuing digital certificates,
+              maintaining the certificate revocation list (CRL), and ensuring the overall security of the PKI infrastructure.
+            </p>
+          </div>
         </div>
       </div>
     </section>
