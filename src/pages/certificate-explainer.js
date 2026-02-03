@@ -546,7 +546,7 @@ export default function CertificateExplainer() {
               <div style={{ flex: 1, border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
                 <h3>Private Key</h3>
                 <p>Used to:</p>
-                <ul>
+                <ul style={{ paddingLeft: 40 }}>
                   <li><strong>Sign</strong> data (creates digital signatures)</li>
                   <li><strong>Decrypt</strong> data encrypted with the public key</li>
                 </ul>
@@ -558,11 +558,11 @@ export default function CertificateExplainer() {
               <div style={{ flex: 1, border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
                 <h3>Public Key</h3>
                 <p>Used to:</p>
-                <ul>
+                <ul style={{ paddingLeft: 40 }}>
                   <li><strong>Verify</strong> signatures created by the private key</li>
                   <li><strong>Encrypt</strong> data (only the private key can decrypt it)</li>
                 </ul>
-                <p style={{ marginTop: 16, padding: 12, backgroundColor: "#d1ecf1", borderRadius: 4 }}>
+                <p style={{ marginTop: 16, padding: 12, backgroundColor: "#d1ecf1", borderRadius: 4, color: "#333" }}>
                   ✓ Safe to share publicly
                 </p>
               </div>
@@ -614,7 +614,7 @@ export default function CertificateExplainer() {
               
               <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
                 <div style={{ flex: "2", border: "1px solid #eee", padding: 16, borderRadius: 6, backgroundColor: "rgba(0, 0, 0, 0.03)" }}>
-                  <pre style={{ whiteSpace: "pre-wrap", fontSize: 12, lineHeight: 1.6, margin: 0 }}>
+                  <pre style={{ whiteSpace: "pre-wrap", fontSize: 12, lineHeight: 1.6, margin: 0, color: "#000" }}>
                     {`Certificate:
     Data:`}
                     <span style={{ backgroundColor: "#ffe4b5", padding: "2px 4px", borderRadius: 3 }}>
@@ -672,37 +672,37 @@ export default function CertificateExplainer() {
                 </div>
 
                 <div style={{ flex: "1", display: "flex", flexDirection: "column", gap: 10 }}>
-                  <div style={{ padding: 10, backgroundColor: "#ffe4b5", borderRadius: 6, border: "1px solid #daa520" }}>
+                  <div style={{ padding: 10, backgroundColor: "#ffe4b5", borderRadius: 6, border: "1px solid #daa520", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Version & Serial</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>X.509 v3, unique serial number</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>X.509 v3, unique serial number</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#e8e8e8", borderRadius: 6, border: "1px solid #999" }}>
+                  <div style={{ padding: 10, backgroundColor: "#e8e8e8", borderRadius: 6, border: "1px solid #999", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Signature Algorithm</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Algorithm used by issuer to sign</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Algorithm used by issuer to sign</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#d4edda", borderRadius: 6, border: "1px solid #28a745" }}>
+                  <div style={{ padding: 10, backgroundColor: "#d4edda", borderRadius: 6, border: "1px solid #28a745", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Issuer</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Who signed this certificate</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Who signed this certificate</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#e6ccff", borderRadius: 6, border: "1px solid #9b59b6" }}>
+                  <div style={{ padding: 10, backgroundColor: "#e6ccff", borderRadius: 6, border: "1px solid #9b59b6", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Validity</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Certificate validity period</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Certificate validity period</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#cce5ff", borderRadius: 6, border: "1px solid #007bff" }}>
+                  <div style={{ padding: 10, backgroundColor: "#cce5ff", borderRadius: 6, border: "1px solid #007bff", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Subject</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Who owns this certificate</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Who owns this certificate</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#d1ecf1", borderRadius: 6, border: "1px solid #17a2b8" }}>
+                  <div style={{ padding: 10, backgroundColor: "#d1ecf1", borderRadius: 6, border: "1px solid #17a2b8", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Public Key</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Subject's public key (RSA 2048)</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Subject's public key (RSA 2048)</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#ffd9b3", borderRadius: 6, border: "1px solid #ff8c00" }}>
+                  <div style={{ padding: 10, backgroundColor: "#ffd9b3", borderRadius: 6, border: "1px solid #ff8c00", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Extensions</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Attributes and constraints</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Attributes and constraints</p>
                   </div>
-                  <div style={{ padding: 10, backgroundColor: "#f8d7da", borderRadius: 6, border: "1px solid #dc3545" }}>
+                  <div style={{ padding: 10, backgroundColor: "#f8d7da", borderRadius: 6, border: "1px solid #dc3545", color: "#000" }}>
                     <strong style={{ fontSize: 13 }}>Signature</strong>
-                    <p style={{ fontSize: 12, margin: "4px 0 0 0" }}>Issuer's digital signature</p>
+                    <p style={{ fontSize: 12, margin: "4px 0 0 0", color: "#333" }}>Issuer's digital signature</p>
                   </div>
                 </div>
               </div>
