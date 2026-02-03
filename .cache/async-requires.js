@@ -3,6 +3,7 @@ exports.components = {
   "component---src-pages-404-js": () => import("./../../../src/pages/404.js?export=default" /* webpackChunkName: "component---src-pages-404-js" */),
   "component---src-pages-about-js": () => import("./../../../src/pages/about.js?export=default" /* webpackChunkName: "component---src-pages-about-js" */),
   "component---src-pages-brand-js": () => import("./../../../src/pages/brand.js?export=default" /* webpackChunkName: "component---src-pages-brand-js" */),
+  "component---src-pages-certificate-explainer-js": () => import("./../../../src/pages/certificate-explainer.js?export=default" /* webpackChunkName: "component---src-pages-certificate-explainer-js" */),
   "component---src-pages-contact-js": () => import("./../../../src/pages/contact.js?export=default" /* webpackChunkName: "component---src-pages-contact-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js?export=default" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-privacy-js": () => import("./../../../src/pages/privacy.js?export=default" /* webpackChunkName: "component---src-pages-privacy-js" */),

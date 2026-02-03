@@ -565,6 +565,18 @@ const Layout = ({ children }) => {
                   Resources
                 </Link>
                 <Link
+                  to="/certificate-explainer"
+                  style={{
+                    color: 'var(--footer-text)',
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    fontWeight: '500',
+                    transition: 'color 0.3s ease'
+                  }}
+                >
+                  PKI Tutorial
+                </Link>
+                <Link
                   to="/team"
                   style={{
                     color: 'var(--footer-text)',
