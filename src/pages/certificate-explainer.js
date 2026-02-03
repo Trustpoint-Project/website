@@ -789,31 +789,31 @@ export default function CertificateExplainer() {
                   <text x="100" y="75" textAnchor="middle" fill={selected === "root" ? "#fff" : "#2b7cff"} fontSize="14" fontWeight="bold">Root CA</text>
                   <text x="100" y="92" textAnchor="middle" fill={selected === "root" ? "#fff" : "#2b7cff"} fontSize="11">Self-signed</text>
                 </g>
-                <text x="100" y="155" textAnchor="middle" fontSize="12" fillOpacity="0.6">Trust Anchor</text>
+                <text x="100" y="155" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.6">Trust Anchor</text>
 
                 <line x1="150" y1="80" x2="280" y2="80" stroke="#999" strokeWidth="2" markerEnd="url(#arrow)" />
-                <text x="215" y="70" textAnchor="middle" fontSize="11" fillOpacity="0.6">signs</text>
+                <text x="215" y="70" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.6">signs</text>
 
                 <g onClick={() => setSelected("intermediate")} style={{ cursor: "pointer" }}>
                   <circle cx="350" cy="80" r="50" fill={selected === "intermediate" ? "#2b7cff" : "#e6f0ff"} stroke="#2b7cff" strokeWidth="2" />
                   <text x="350" y="75" textAnchor="middle" fill={selected === "intermediate" ? "#fff" : "#2b7cff"} fontSize="14" fontWeight="bold">Issuing CA</text>
                   <text x="350" y="92" textAnchor="middle" fill={selected === "intermediate" ? "#fff" : "#2b7cff"} fontSize="11">Intermediate</text>
                 </g>
-                <text x="350" y="155" textAnchor="middle" fontSize="12" fillOpacity="0.6">Signed by Root</text>
+                <text x="350" y="155" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.6">Signed by Root</text>
 
                 <line x1="400" y1="80" x2="530" y2="80" stroke="#999" strokeWidth="2" markerEnd="url(#arrow)" />
-                <text x="465" y="70" textAnchor="middle" fontSize="11" fillOpacity="0.6">signs</text>
+                <text x="465" y="70" textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.6">signs</text>
 
                 <g onClick={() => setSelected("endEntity")} style={{ cursor: "pointer" }}>
                   <rect x="560" y="30" width="100" height="100" rx="8" fill={selected === "endEntity" ? "#2b7cff" : "#e6f0ff"} stroke="#2b7cff" strokeWidth="2" />
                   <text x="610" y="75" textAnchor="middle" fill={selected === "endEntity" ? "#fff" : "#2b7cff"} fontSize="14" fontWeight="bold">End Entity</text>
                   <text x="610" y="92" textAnchor="middle" fill={selected === "endEntity" ? "#fff" : "#2b7cff"} fontSize="11">Server Cert</text>
                 </g>
-                <text x="610" y="155" textAnchor="middle" fontSize="12" fillOpacity="0.6">Signed by Issuing CA</text>
+                <text x="610" y="155" textAnchor="middle" fontSize="12" fill="currentColor" opacity="0.6">Signed by Issuing CA</text>
 
                 <defs>
                   <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+                    <polygon points="0 0, 10 3.5, 0 7" fill="currentColor" opacity="0.6" />
                   </marker>
                 </defs>
               </svg>
@@ -1125,17 +1125,17 @@ export default function CertificateExplainer() {
                 {/* Client box */}
                 <rect x="30" y="10" width="180" height="400" rx="4" 
                   fill="none" stroke="#999" strokeWidth="1" strokeDasharray="5,5" />
-                <text x="120" y="430" textAnchor="middle" fillOpacity="0.6" fontSize="12">Client</text>
+                <text x="120" y="430" textAnchor="middle" fill="currentColor" opacity="0.6" fontSize="12">Client</text>
 
                 {/* CA box */}
                 <rect x="410" y="110" width="180" height="200" rx="4" 
                   fill="none" stroke="#999" strokeWidth="1" strokeDasharray="5,5" />
-                <text x="500" y="430" textAnchor="middle" fillOpacity="0.6" fontSize="12">Certificate Authority</text>
+                <text x="500" y="430" textAnchor="middle" fill="currentColor" opacity="0.6" fontSize="12">Certificate Authority</text>
 
                 {/* Arrow marker */}
                 <defs>
                   <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fillOpacity="0.6" />
+                    <polygon points="0 0, 10 3.5, 0 7" fill="currentColor" opacity="0.6" />
                   </marker>
                 </defs>
               </svg>
