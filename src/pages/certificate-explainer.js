@@ -504,7 +504,7 @@ export default function CertificateExplainer() {
       <div style={{ fontFamily: "Inter, Roboto, sans-serif", padding: 32 }}>
         <h1>Interactive PKI Tutorial</h1>
 
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, borderBottom: "2px solid #eee", paddingBottom: 0 }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 24, borderBottom: "2px solid var(--border-color)", paddingBottom: 0 }}>
           {[
             { num: 1, title: "Keys" },
             { num: 2, title: "Certificates" },
@@ -543,7 +543,7 @@ export default function CertificateExplainer() {
             </p>
 
             <div style={{ display: "flex", gap: 24, marginTop: 20 }}>
-              <div style={{ flex: 1, border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
+              <div style={{ flex: 1, border: "1px solid var(--border-color)", padding: 16, borderRadius: 6 }}>
                 <h3>Private Key</h3>
                 <p>Used to:</p>
                 <ul style={{ paddingLeft: 40 }}>
@@ -555,7 +555,7 @@ export default function CertificateExplainer() {
                 </p>
               </div>
 
-              <div style={{ flex: 1, border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
+              <div style={{ flex: 1, border: "1px solid var(--border-color)", padding: 16, borderRadius: 6 }}>
                 <h3>Public Key</h3>
                 <p>Used to:</p>
                 <ul style={{ paddingLeft: 40 }}>
@@ -571,7 +571,7 @@ export default function CertificateExplainer() {
             <div style={{ marginTop: 24 }}>
               <h3>Example: End Entity Key Pair</h3>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                <div style={{ border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
+                <div style={{ border: "1px solid var(--border-color)", padding: 16, borderRadius: 6 }}>
                   <h4 style={{ marginTop: 0 }}>Private Key</h4>
                   <pre style={{ whiteSpace: "pre-wrap", fontSize: 11, backgroundColor: "rgba(0, 0, 0, 0.03)", padding: 12, borderRadius: 4, overflow: "auto", maxHeight: 300, border: "1px solid rgba(0, 0, 0, 0.1)" }}>
                     {samples.endEntity.privateKey}
@@ -581,7 +581,7 @@ export default function CertificateExplainer() {
                   </p>
                 </div>
 
-                <div style={{ border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
+                <div style={{ border: "1px solid var(--border-color)", padding: 16, borderRadius: 6 }}>
                   <h4 style={{ marginTop: 0 }}>Public Key</h4>
                   <pre style={{ whiteSpace: "pre-wrap", fontSize: 11, backgroundColor: "rgba(0, 0, 0, 0.03)", padding: 12, borderRadius: 4, overflow: "auto", maxHeight: 300, border: "1px solid rgba(0, 0, 0, 0.1)" }}>
                     {samples.endEntity.publicKey}
@@ -613,7 +613,7 @@ export default function CertificateExplainer() {
               <p style={{ fontSize: 14, marginBottom: 12 }}>The ASN.1 structure of the End Entity certificate with key components highlighted:</p>
               
               <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
-                <div style={{ flex: "2", border: "1px solid #eee", padding: 16, borderRadius: 6, backgroundColor: "rgba(0, 0, 0, 0.03)" }}>
+                <div style={{ flex: "2", border: "1px solid var(--border-color)", padding: 16, borderRadius: 6, backgroundColor: "rgba(0, 0, 0, 0.03)" }}>
                   <pre style={{ whiteSpace: "pre-wrap", fontSize: 12, lineHeight: 1.6, margin: 0, color: "#000" }}>
                     {`Certificate:
     Data:`}
@@ -711,7 +711,7 @@ export default function CertificateExplainer() {
             <div style={{ marginTop: 24 }}>
               <h3>Example: End Entity Certificate</h3>
               
-              <div style={{ display: "flex", gap: 4, marginBottom: 16, borderBottom: "1px solid #eee", paddingBottom: 8 }}>
+              <div style={{ display: "flex", gap: 4, marginBottom: 16, borderBottom: "1px solid var(--border-color)", paddingBottom: 8 }}>
                 {["pem", "der", "asn1"].map((fmt) => (
                   <button
                     key={fmt}
@@ -734,7 +734,7 @@ export default function CertificateExplainer() {
                 ))}
               </div>
 
-              <div style={{ border: "1px solid #eee", padding: 12, borderRadius: 6 }}>
+              <div style={{ border: "1px solid var(--border-color)", padding: 12, borderRadius: 6 }}>
                 {format === "pem" && (
                   <div>
                     <strong>PEM Format</strong>
@@ -783,7 +783,7 @@ export default function CertificateExplainer() {
 
             <div style={{ marginTop: 24 }}>
               <h3>Certificate Chain</h3>
-              <svg width="100%" height="280" style={{ border: "1px solid #eee", borderRadius: 6, padding: 20 }}>
+              <svg width="100%" height="280" style={{ border: "1px solid var(--border-color)", borderRadius: 6, padding: 20 }}>
                 <g onClick={() => setSelected("root")} style={{ cursor: "pointer" }}>
                   <circle cx="100" cy="80" r="50" fill={selected === "root" ? "#2b7cff" : "#e6f0ff"} stroke="#2b7cff" strokeWidth="2" />
                   <text x="100" y="75" textAnchor="middle" fill={selected === "root" ? "#fff" : "#2b7cff"} fontSize="14" fontWeight="bold">Root CA</text>
@@ -821,10 +821,10 @@ export default function CertificateExplainer() {
 
             <div style={{ marginTop: 24 }}>
               <h3>Click on a certificate to view its details</h3>
-              <div style={{ border: "1px solid #eee", padding: 16, borderRadius: 6, marginTop: 12 }}>
+              <div style={{ border: "1px solid var(--border-color)", padding: 16, borderRadius: 6, marginTop: 12 }}>
                 <h4>{current.name}</h4>
                 
-                <div style={{ display: "flex", gap: 4, marginTop: 12, marginBottom: 16, borderBottom: "1px solid #eee", paddingBottom: 8 }}>
+                <div style={{ display: "flex", gap: 4, marginTop: 12, marginBottom: 16, borderBottom: "1px solid var(--border-color)", paddingBottom: 8 }}>
                   {["pem", "der", "asn1"].map((fmt) => (
                     <button
                       key={fmt}
@@ -899,19 +899,19 @@ export default function CertificateExplainer() {
             <div style={{ marginTop: 20 }}>
               <h3>Why Revoke a Certificate?</h3>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 12 }}>
-                <div style={{ border: "1px solid #eee", padding: 12, borderRadius: 6 }}>
+                <div style={{ border: "1px solid var(--border-color)", padding: 12, borderRadius: 6 }}>
                   <strong>Key Compromise</strong>
                   <p style={{ fontSize: 13 }}>Private key was stolen or leaked</p>
                 </div>
-                <div style={{ border: "1px solid #eee", padding: 12, borderRadius: 6 }}>
+                <div style={{ border: "1px solid var(--border-color)", padding: 12, borderRadius: 6 }}>
                   <strong>CA Compromise</strong>
                   <p style={{ fontSize: 13 }}>The issuing CA was compromised</p>
                 </div>
-                <div style={{ border: "1px solid #eee", padding: 12, borderRadius: 6 }}>
+                <div style={{ border: "1px solid var(--border-color)", padding: 12, borderRadius: 6 }}>
                   <strong>Information Change</strong>
                   <p style={{ fontSize: 13 }}>Domain or organization details changed</p>
                 </div>
-                <div style={{ border: "1px solid #eee", padding: 12, borderRadius: 6 }}>
+                <div style={{ border: "1px solid var(--border-color)", padding: 12, borderRadius: 6 }}>
                   <strong>Superseded</strong>
                   <p style={{ fontSize: 13 }}>Certificate replaced by a new one</p>
                 </div>
@@ -942,7 +942,7 @@ export default function CertificateExplainer() {
               </div>
 
               {current.crl && (
-                <div style={{ display: "flex", gap: 4, marginBottom: 12, borderBottom: "1px solid #eee", paddingBottom: 8 }}>
+                <div style={{ display: "flex", gap: 4, marginBottom: 12, borderBottom: "1px solid var(--border-color)", paddingBottom: 8 }}>
                   {["pem", "asn1"].map((fmt) => (
                     <button
                       key={fmt}
@@ -966,7 +966,7 @@ export default function CertificateExplainer() {
                 </div>
               )}
 
-              <div style={{ border: "1px solid #eee", padding: 16, borderRadius: 6 }}>
+              <div style={{ border: "1px solid var(--border-color)", padding: 16, borderRadius: 6 }}>
                 <h4>{current.name} - Certificate Revocation List</h4>
                 {current.crl ? (
                   <div>

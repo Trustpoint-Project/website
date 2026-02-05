@@ -6,7 +6,7 @@
   --text-primary: #2c3e50;
   --text-secondary: #6c757d;
   --text-accent: #cccccc;
-  --border-color: #e9ecef;
+  --border-color: #cccccc;
   --border-dark: #333;
   --shadow-light: rgba(0,0,0,0.1);
   --shadow-dark: rgba(0,0,0,0.3);
@@ -29,7 +29,7 @@
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
   --text-accent: #cccccc;
-  --border-color: #333;
+  --border-color: #666666;
   --border-dark: #555;
   --shadow-light: rgba(0,0,0,0.3);
   --shadow-dark: rgba(0,0,0,0.5);

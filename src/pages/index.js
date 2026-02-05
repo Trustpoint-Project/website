@@ -58,9 +58,9 @@ const ValuePropositionTabs = () => {
 
   const getButtonStyle = (key) => ({
     padding: '1rem 2rem',
-    border: activeTab === key ? '2px solid var(--accent-primary)' : '2px solid var(--border-color)',
+    border: activeTab === key ? '2px solid var(--brand-primary)' : '2px solid var(--border-color)',
     borderRadius: '8px',
-    backgroundColor: activeTab === key ? '#004aad' : 'var(--bg-primary)',
+    backgroundColor: activeTab === key ? '#004aad' : 'var(--bg-secondary)',
     color: activeTab === key ? '#ffffff' : 'var(--text-primary)',
     fontSize: '1.1rem',
     fontWeight: activeTab === key ? '600' : '500',
@@ -68,7 +68,7 @@ const ValuePropositionTabs = () => {
     transition: 'all 0.3s ease',
     minWidth: '200px',
     boxShadow: activeTab === key ? '0 2px 8px rgba(0, 74, 170, 0.3)' : (hoveredTab === key ? '0 2px 4px rgba(0, 74, 170, 0.2)' : 'none'),
-    borderColor: hoveredTab === key && activeTab !== key ? 'var(--accent-primary)' : (activeTab === key ? 'var(--accent-primary)' : 'var(--border-color)')
+    borderColor: hoveredTab === key && activeTab !== key ? 'var(--brand-primary)' : (activeTab === key ? 'var(--brand-primary)' : 'var(--border-color)')
   })
 
   return (
@@ -133,10 +133,12 @@ const ValuePropositionTabs = () => {
               key={index}
               style={{
                 padding: '1.5rem',
-                backgroundColor: 'var(--bg-primary)',
+                backgroundColor: 'var(--bg-secondary)',
+                border: '1px solid var(--border-color)',
                 borderRadius: '8px',
-                borderLeft: '4px solid var(--accent-primary)',
-                textAlign: 'left'
+                borderLeft: '4px solid var(--brand-primary)',
+                textAlign: 'left',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
               }}
             >
               <p style={{
@@ -423,7 +425,7 @@ const IndexPage = () => {
             <div style={{ textAlign: 'center' }}>
               <p style={{
                 fontSize: '1rem',
-                color: 'var(--accent-primary)',
+                color: 'var(--brand-primary)',
                 fontWeight: '500',
                 margin: '0 0 1rem 0'
               }}>
@@ -839,7 +841,7 @@ const IndexPage = () => {
         }}>
           {/* Case Study 1 */}
           <div style={{
-            backgroundColor: 'var(--bg-primary)',
+            backgroundColor: 'var(--bg-secondary)',
             borderRadius: '12px',
             padding: '2rem',
             boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
@@ -852,7 +854,7 @@ const IndexPage = () => {
               marginBottom: '1rem'
             }}>
               <span style={{
-                backgroundColor: 'var(--accent-primary)',
+                backgroundColor: 'var(--brand-primary)',
                 color: 'white',
                 padding: '0.25rem 0.75rem',
                 borderRadius: '20px',
@@ -881,7 +883,7 @@ const IndexPage = () => {
 
           {/* Case Study 2 */}
           <div style={{
-            backgroundColor: 'var(--bg-primary)',
+            backgroundColor: 'var(--bg-secondary)',
             borderRadius: '12px',
             padding: '2rem',
             boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
@@ -894,7 +896,7 @@ const IndexPage = () => {
               marginBottom: '1rem'
             }}>
               <span style={{
-                backgroundColor: 'var(--accent-primary)',
+                backgroundColor: 'var(--brand-primary)',
                 color: 'white',
                 padding: '0.25rem 0.75rem',
                 borderRadius: '20px',
@@ -923,7 +925,7 @@ const IndexPage = () => {
 
           {/* Case Study 3 */}
           <div style={{
-            backgroundColor: 'var(--bg-primary)',
+            backgroundColor: 'var(--bg-secondary)',
             borderRadius: '12px',
             padding: '2rem',
             boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
@@ -936,7 +938,7 @@ const IndexPage = () => {
               marginBottom: '1rem'
             }}>
               <span style={{
-                backgroundColor: 'var(--accent-primary)',
+                backgroundColor: 'var(--brand-primary)',
                 color: 'white',
                 padding: '0.25rem 0.75rem',
                 borderRadius: '20px',

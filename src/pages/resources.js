@@ -165,10 +165,102 @@ const ResourcesPage = () => (
       </div>
     </section>
 
-    {/* Papers & Articles Section */}
+    {/* Training Section */}
     <section style={{
       padding: '4rem 0',
       backgroundColor: 'var(--bg-secondary)'
+    }}>
+      <div style={{
+        maxWidth: '1000px',
+        margin: '0 auto',
+        padding: '0 2rem'
+      }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '400',
+          color: 'var(--text-primary)',
+          marginBottom: '2rem',
+          textAlign: 'center'
+        }}>
+          Training
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem',
+          marginBottom: '2rem'
+        }}>
+          {/* Interactive PKI Tutorial */}
+          <div style={{
+            padding: '2rem',
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: '8px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)',
+            borderLeft: '4px solid var(--brand-primary)'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '500',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              Interactive PKI Tutorial
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.6',
+              marginBottom: '1rem'
+            }}>
+              Learn the fundamentals of Public Key Infrastructure (PKI) with our interactive certificate explainer. Explore X.509 certificates, chain of trust, and PKI concepts through hands-on examples with real certificate data.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: '0.5rem',
+              flexWrap: 'wrap'
+            }}>
+              <span style={{
+                backgroundColor: 'var(--brand-primary)',
+                color: 'white',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '4px',
+                fontSize: '0.8rem',
+                fontWeight: '500'
+              }}>
+                Interactive
+              </span>
+              <span style={{
+                backgroundColor: 'var(--bg-secondary)',
+                color: 'var(--text-secondary)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '4px',
+                fontSize: '0.8rem'
+              }}>
+                Free
+              </span>
+            </div>
+            <a
+              href="/certificate-explainer"
+              style={{
+                display: 'inline-block',
+                marginTop: '1rem',
+                color: 'var(--brand-primary)',
+                textDecoration: 'none',
+                fontWeight: '500'
+              }}
+            >
+              Start Tutorial →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Papers & Articles Section */}
+    <section style={{
+      padding: '4rem 0',
+      backgroundColor: 'var(--bg-primary)'
     }}>
       <div style={{
         maxWidth: '1000px',
@@ -197,6 +289,7 @@ const ResourcesPage = () => (
             backgroundColor: 'var(--bg-primary)',
             borderRadius: '8px',
             boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)',
             borderLeft: '4px solid var(--brand-primary)'
           }}>
             <h3 style={{
@@ -267,6 +360,7 @@ management of digital identities can work in industry.            </p>
             backgroundColor: 'var(--bg-primary)',
             borderRadius: '8px',
             boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)',
             borderLeft: '4px solid var(--brand-primary)'
           }}>
             <h3 style={{
@@ -331,6 +425,7 @@ In industrial automation environments, digital certificates are crucial for ensu
             backgroundColor: 'var(--bg-primary)',
             borderRadius: '8px',
             boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)',
             borderLeft: '4px solid var(--brand-primary)'
           }}>
             <h3 style={{
@@ -394,7 +489,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
     {/* Videos Section */}
     <section style={{
       padding: '4rem 0',
-      backgroundColor: 'var(--bg-primary)'
+      backgroundColor: 'var(--bg-secondary)'
     }}>
       <div style={{
         maxWidth: '1000px',
@@ -422,7 +517,8 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
           }}>
             <div style={{
               position: 'relative',
@@ -431,7 +527,10 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               overflow: 'hidden',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex={0}
             onClick={() => window.open('https://www.youtube.com/watch?v=Xowxd75lNdk', '_blank')}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open('https://www.youtube.com/watch?v=Xowxd75lNdk', '_blank'); } }}
             >
               <img
                 src="https://img.youtube.com/vi/Xowxd75lNdk/maxresdefault.jpg"
@@ -453,7 +552,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
                 transform: 'translate(-50%, -50%)',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -513,7 +612,8 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
           }}>
             <div style={{
               position: 'relative',
@@ -522,7 +622,10 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               overflow: 'hidden',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex={0}
             onClick={() => window.open('https://www.youtube.com/watch?v=5HhKC1rGzZQ', '_blank')}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open('https://www.youtube.com/watch?v=5HhKC1rGzZQ', '_blank'); } }}
             >
               <img
                 src="https://img.youtube.com/vi/5HhKC1rGzZQ/maxresdefault.jpg"
@@ -544,7 +647,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
                 transform: 'translate(-50%, -50%)',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -604,7 +707,8 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
           }}>
             <div style={{
               position: 'relative',
@@ -613,7 +717,10 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               overflow: 'hidden',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex={0}
             onClick={() => window.open('https://www.youtube.com/watch?v=bB-9h1drfSk', '_blank')}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open('https://www.youtube.com/watch?v=bB-9h1drfSk', '_blank'); } }}
             >
               <img
                 src="https://img.youtube.com/vi/bB-9h1drfSk/maxresdefault.jpg"
@@ -635,7 +742,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
                 transform: 'translate(-50%, -50%)',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -695,7 +802,8 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
           }}>
             <div style={{
               position: 'relative',
@@ -704,7 +812,10 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               overflow: 'hidden',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex={0}
             onClick={() => window.open('https://www.youtube.com/watch?v=VlxS0ADxX0Q', '_blank')}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open('https://www.youtube.com/watch?v=VlxS0ADxX0Q', '_blank'); } }}
             >
               <img
                 src="https://img.youtube.com/vi/VlxS0ADxX0Q/maxresdefault.jpg"
@@ -726,7 +837,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
                 transform: 'translate(-50%, -50%)',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -786,7 +897,8 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
           }}>
             <div style={{
               position: 'relative',
@@ -795,7 +907,10 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               overflow: 'hidden',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex={0}
             onClick={() => window.open('https://www.youtube.com/watch?v=fVm8D4A0-p8', '_blank')}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open('https://www.youtube.com/watch?v=fVm8D4A0-p8', '_blank'); } }}
             >
               <img
                 src="https://img.youtube.com/vi/fVm8D4A0-p8/maxresdefault.jpg"
@@ -817,7 +932,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
                 transform: 'translate(-50%, -50%)',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -877,7 +992,8 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             backgroundColor: 'var(--bg-secondary)',
             borderRadius: '8px',
             overflow: 'hidden',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)'
           }}>
             <div style={{
               position: 'relative',
@@ -886,7 +1002,10 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
               overflow: 'hidden',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex={0}
             onClick={() => window.open('https://www.youtube.com/watch?v=CMssNfKeM3A', '_blank')}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open('https://www.youtube.com/watch?v=CMssNfKeM3A', '_blank'); } }}
             >
               <img
                 src="https://img.youtube.com/vi/CMssNfKeM3A/maxresdefault.jpg"
@@ -908,7 +1027,7 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
                 transform: 'translate(-50%, -50%)',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgba(0,0,0,0.7)',
+                backgroundColor: 'var(--brand-primary)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',

@@ -22,7 +22,7 @@ const ImpressionCarousel = () => {
   }, [])
 
   // Define all impression images with their theme requirements
-  const allImpressions = [
+  const allImpressions = React.useMemo(() => [
     { src: '/images/impressions/20260107_trustpoint_impression_ca_dark.png', theme: 'dark' },
     { src: '/images/impressions/20260107_trustpoint_impression_ca_light.png', theme: 'light' },
     { src: '/images/impressions/20260107_trustpoint_impression_cmp_dark.png', theme: 'dark' },
@@ -32,7 +32,7 @@ const ImpressionCarousel = () => {
     { src: '/images/impressions/20260107_trustpoint_impression_swagger.png', theme: 'both' },
     { src: '/images/impressions/20260107_trustpoint_impression_workflow_dark.png', theme: 'dark' },
     { src: '/images/impressions/20260107_trustpoint_impression_workflow_light.png', theme: 'light' }
-  ]
+  ], [])
 
   // Filter impressions based on current theme - only after mount to avoid hydration mismatch
   const currentImpressions = React.useMemo(() => {
@@ -305,6 +305,19 @@ const styles = {
     fontWeight: '500',
     transition: 'background-color 0.2s'
   },
+  tutorialButton: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    padding: '0.75rem 1.5rem',
+    backgroundColor: '#28a745',
+    color: 'white',
+    textDecoration: 'none',
+    borderRadius: '6px',
+    fontSize: '1rem',
+    fontWeight: '500',
+    transition: 'background-color 0.2s'
+  },
   buttonIcon: {
     width: '20px',
     height: '20px',
@@ -368,10 +381,11 @@ const styles = {
     gap: '2rem'
   },
   featureCard: {
-    backgroundColor: 'var(--bg-primary)',
+    backgroundColor: 'var(--bg-secondary)',
+    border: '1px solid var(--border-color)',
     padding: '2rem',
     borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
     textAlign: 'center'
   },
   featureTitle: {
@@ -654,6 +668,24 @@ const AboutPage = () => (
             alt="Trustpoint Architecture Overview"
             style={styles.architectureImage}
           />
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <a
+            href="/certificate-explainer"
+            style={{
+              display: 'inline-block',
+              padding: '0.5rem 1rem',
+              backgroundColor: '#28a745',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '4px',
+              fontSize: '0.9rem',
+              fontWeight: '500',
+              transition: 'background-color 0.2s'
+            }}
+          >
+            New to PKI, certificates & Co? Learn PKI Fundamentals
+          </a>
         </div>
       </div>
     </section>
