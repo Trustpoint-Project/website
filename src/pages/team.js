@@ -7,37 +7,56 @@ const TeamPage = () => {
     {
       name: "Florian Handke",
       organization: "Campus Schwarzwald",
-      linkedin: "https://www.linkedin.com/in/florian-handke/"
+      linkedin: "https://www.linkedin.com/in/florian-handke/",
+      photo: "florian_handke.png"
     },
     {
       name: "Prof. Jan Pelzl",
       organization: "Hochschule Hamm-Lippstadt",
-      linkedin: "https://www.linkedin.com/in/jan-pelzl-3677634/"
+      linkedin: "https://www.linkedin.com/in/jan-pelzl-3677634/",
+      photo: "jan_pelzl.png"
     },
     {
       name: "Christian Schwinne",
       organization: "Hochschule Hamm-Lippstadt",
-      linkedin: "https://www.linkedin.com/in/christian-schwinne-3539a817b/"
+      linkedin: "https://www.linkedin.com/in/christian-schwinne-3539a817b/",
+      photo: "christian_schwinne.png"
     },
     {
       name: "Alexander Harig",
       organization: "Campus Schwarzwald",
-      linkedin: "https://www.linkedin.com/in/alexhx8472/"
+      linkedin: "https://www.linkedin.com/in/alexhx8472/",
+      photo: "alexander_harig.png"
     },
     {
       name: "Dominik Isaak",
       organization: "achelos GmbH",
-      linkedin: "https://www.linkedin.com/in/dominik-i/"
+      linkedin: "https://www.linkedin.com/in/dominik-i/",
+      photo: "dominik_isaak.png"
     },
     {
       name: "Rohit Bohara",
       organization: "asvin GmbH",
-      linkedin: "https://www.linkedin.com/in/rohit-bohara/"
+      linkedin: "https://www.linkedin.com/in/rohit-bohara/",
+      photo: "rohit_bohara.png"
     },
     {
       name: "Gavin Vaz",
       organization: "achelos GmbH",
-      linkedin: "https://www.linkedin.com/in/gavin-vaz/"
+      linkedin: "https://www.linkedin.com/in/gavin-vaz/",
+      photo: "gavin_vaz.png"
+    },
+    {
+      name: "Christof Schillinger",
+      organization: "Campus Schwarzwald",
+      linkedin: "https://www.linkedin.com/in/christof-schillinger-647844299/",
+      photo: "christof_schillinger.png"
+    },
+    {
+      name: "Mohammad Zeeshan",
+      organization: "Campus Schwarzwald",
+      linkedin: "https://www.linkedin.com/in/zeesh31/",
+      photo: "mohammad_zeeshan.png"
     }
   ]
 
@@ -78,14 +97,15 @@ const TeamPage = () => {
         }}>
           {teamMembers.map((member, index) => (
             <div key={index} style={{
-              backgroundColor: 'var(--card-background)',
+              backgroundColor: 'white',
               border: '1px solid var(--border-color)',
-              borderRadius: '8px',
               padding: '2rem',
               textAlign: 'center',
               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               cursor: 'pointer'
             }}
+            role="button"
+            tabIndex="0"
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)'
               e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)'
@@ -95,33 +115,57 @@ const TeamPage = () => {
               e.currentTarget.style.boxShadow = 'none'
             }}
             onClick={() => window.open(member.linkedin, '_blank')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                window.open(member.linkedin, '_blank');
+              }
+            }}
             >
               <div style={{
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--link-color)',
+                width: '160px',
+                height: '160px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                margin: '0 auto 1rem',
-                color: 'white',
-                fontSize: '2rem',
-                fontWeight: '600'
+                margin: '0 auto 1rem'
               }}>
-                {member.name.replace('Prof. ', '').split(' ').map(n => n[0]).join('')}
+                {member.photo ? (
+                  <img 
+                    src={`/images/team/${member.photo}`} 
+                    alt={member.name} 
+                    style={{
+                      width: '160px',
+                      height: '160px',
+                      objectFit: 'cover'
+                    }} 
+                  />
+                ) : (
+                  <div style={{
+                    width: '160px',
+                    height: '160px',
+                    backgroundColor: 'var(--link-color)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '4rem',
+                    fontWeight: '600'
+                  }}>
+                    {member.name.replace('Prof. ', '').split(' ').map(n => n[0]).join('')}
+                  </div>
+                )}
               </div>
               <h3 style={{
                 fontSize: '1.25rem',
                 fontWeight: '600',
                 marginBottom: '0.25rem',
-                color: 'var(--text-primary)'
+                color: '#000'
               }}>
                 {member.name}
               </h3>
               <p style={{
                 fontSize: '0.9rem',
-                color: 'var(--text-secondary)',
+                color: '#555',
                 marginBottom: '1rem',
                 fontWeight: '500'
               }}>
