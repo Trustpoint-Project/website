@@ -104,8 +104,6 @@ const TeamPage = () => {
               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               cursor: 'pointer'
             }}
-            role="button"
-            tabIndex="0"
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)'
               e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)'
@@ -115,15 +113,10 @@ const TeamPage = () => {
               e.currentTarget.style.boxShadow = 'none'
             }}
             onClick={() => window.open(member.linkedin, '_blank')}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                window.open(member.linkedin, '_blank');
-              }
-            }}
             >
               <div style={{
-                width: '160px',
-                height: '160px',
+                width: '140px',
+                height: '140px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -134,21 +127,21 @@ const TeamPage = () => {
                     src={`/images/team/${member.photo}`} 
                     alt={member.name} 
                     style={{
-                      width: '160px',
-                      height: '160px',
+                      width: '140px',
+                      height: '140px',
                       objectFit: 'cover'
                     }} 
                   />
                 ) : (
                   <div style={{
-                    width: '160px',
-                    height: '160px',
+                    width: '140px',
+                    height: '140px',
                     backgroundColor: 'var(--link-color)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'white',
-                    fontSize: '4rem',
+                    fontSize: '3.5rem',
                     fontWeight: '600'
                   }}>
                     {member.name.replace('Prof. ', '').split(' ').map(n => n[0]).join('')}
@@ -159,13 +152,13 @@ const TeamPage = () => {
                 fontSize: '1.25rem',
                 fontWeight: '600',
                 marginBottom: '0.25rem',
-                color: '#000'
+                color: '#333'
               }}>
                 {member.name}
               </h3>
               <p style={{
                 fontSize: '0.9rem',
-                color: '#555',
+                color: 'var(--text-secondary)',
                 marginBottom: '1rem',
                 fontWeight: '500'
               }}>

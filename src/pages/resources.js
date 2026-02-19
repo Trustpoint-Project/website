@@ -56,7 +56,7 @@ const ResourcesPage = () => (
         "@type": "ItemList",
         "name": "Trustpoint Resources",
         "description": "Collection of research papers, articles, and educational videos about Trustpoint PKI",
-        "numberOfItems": 9,
+        "numberOfItems": 11,
         "itemListElement": [
           {
             "@type": "Article",
@@ -80,6 +80,28 @@ const ResourcesPage = () => (
             "name": "Zero-Trust Architecture for Manufacturing",
             "description": "Implementing zero-trust principles in industrial manufacturing environments using Trustpoint.",
             "datePublished": "2023"
+          },
+          {
+            "@type": "Article",
+            "name": "Securing Industry 4.0 with Digital Identities for Embedded Components",
+            "description": "This paper explores the critical role of digital identities in securing embedded components within Industry 4.0 environments. It discusses challenges and solutions for implementing robust identity management systems to protect industrial IoT devices and ensure secure communication.",
+            "datePublished": "2025",
+            "publisher": {
+              "@type": "Organization",
+              "name": "embedded world conference"
+            },
+            "url": "https://trustpoint-project.github.io/files/ewC2025_trustpoint.pdf"
+          },
+          {
+            "@type": "PresentationDigitalDocument",
+            "name": "Trustpoint Pitch Deck",
+            "description": "Latest presentation deck showcasing Trustpoint's vision, technology, and roadmap for open-source PKI in industrial IoT security.",
+            "datePublished": "2025-01-31",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Trustpoint Project"
+            },
+            "url": "https://trustpoint-project.github.io/files/trustpoint_pitch_latest.pdf"
           },
           {
             "@type": "VideoObject",
@@ -469,6 +491,70 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
             </div>
             <a
               href="/files/trustpoint_beitrag_20_it_sicherheitskongress.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                marginTop: '1rem',
+                color: 'var(--brand-primary)',
+                textDecoration: 'none',
+                fontWeight: '500'
+              }}
+            >
+              Download PDF →
+            </a>
+          </div>
+
+          {/* Paper/Article 4 */}
+          <div style={{
+            padding: '2rem',
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: '8px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)',
+            borderLeft: '4px solid var(--brand-primary)'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '500',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              Securing Industry 4.0 with Digital Identities for Embedded Components
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.6',
+              marginBottom: '1rem'
+            }}>
+This paper explores the critical role of digital identities in securing embedded components within Industry 4.0 environments. It discusses challenges and solutions for implementing robust identity management systems to protect industrial IoT devices and ensure secure communication.            </p>
+            <div style={{
+              display: 'flex',
+              gap: '0.5rem',
+              flexWrap: 'wrap'
+            }}>
+              <span style={{
+                backgroundColor: 'var(--brand-primary)',
+                color: 'white',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '4px',
+                fontSize: '0.8rem',
+                fontWeight: '500'
+              }}>
+                embedded world conference
+              </span>
+              <span style={{
+                backgroundColor: 'var(--bg-secondary)',
+                color: 'var(--text-secondary)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '4px',
+                fontSize: '0.8rem'
+              }}>
+                2025
+              </span>
+            </div>
+            <a
+              href="/files/ewC2025_trustpoint.pdf"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -1084,6 +1170,100 @@ The Trustpoint project was launched in September 2023 by Campus Schwarzwald, med
         </div>
 
 
+      </div>
+    </section>
+
+    {/* Pitch Deck Section */}
+    <section style={{
+      padding: '4rem 0',
+      backgroundColor: 'var(--bg-primary)'
+    }}>
+      <div style={{
+        maxWidth: '1000px',
+        margin: '0 auto',
+        padding: '0 2rem'
+      }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '400',
+          color: 'var(--text-primary)',
+          marginBottom: '2rem',
+          textAlign: 'center'
+        }}>
+          Pitch Deck
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem',
+          marginBottom: '2rem'
+        }}>
+          {/* Pitch Deck */}
+          <div style={{
+            padding: '2rem',
+            backgroundColor: 'var(--bg-primary)',
+            borderRadius: '8px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            border: '1px solid var(--border-color)',
+            borderLeft: '4px solid var(--brand-primary)'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '500',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              Trustpoint Pitch Deck
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.6',
+              marginBottom: '1rem'
+            }}>
+              Latest presentation deck showcasing Trustpoint's vision, technology, and roadmap for open-source PKI in industrial IoT security. Discover our mission to provide secure digital identities for Industry 4.0.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: '0.5rem',
+              flexWrap: 'wrap'
+            }}>
+              <span style={{
+                backgroundColor: 'var(--brand-primary)',
+                color: 'white',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '4px',
+                fontSize: '0.8rem',
+                fontWeight: '500'
+              }}>
+                Presentation
+              </span>
+              <span style={{
+                backgroundColor: 'var(--bg-secondary)',
+                color: 'var(--text-secondary)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '4px',
+                fontSize: '0.8rem'
+              }}>
+                January 2026
+              </span>
+            </div>
+            <a
+              href="/files/trustpoint_pitch_latest.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                marginTop: '1rem',
+                color: 'var(--brand-primary)',
+                textDecoration: 'none',
+                fontWeight: '500'
+              }}
+            >
+              Download PDF →
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
