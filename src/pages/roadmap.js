@@ -6,9 +6,28 @@ import Seo from "../components/seo"
 const TrustpointReleases = () => {
   const releases = [
     {
+      version: 'v0.6.0',
+      title: 'Beta Release V0.6.0',
+      date: '07/2025',
+      features: [
+        'CA Rollover – enables controlled replacement of existing issuing CAs while maintaining certificate lifecycle continuity.',
+        'Trustpoint Agent v1 – introduces a stateless agent for automated certificate onboarding and renewal on native Linux hosts.',
+        'HSM Integration – adds PKCS#11-based support for secure key storage and cryptographic operations using compatible hardware security modules (HSMs).',
+        'Users, Roles, and Organizations – introduces role-based access control (RBAC) and organizational separation for improved access management.',
+        'Audit Logging – records security-relevant operations such as certificate issuance and configuration changes for improved traceability.',
+        'REST APIs and Headless Integration – adds APIs for certificate enrollment, DevOwnerID and DevID registration, workflow definitions, and onboarding configuration.',
+        'Monitoring and Discovery – adds Prometheus metrics, certificate discovery, mDNS support, and simplified views for improved visibility and local service discovery.',
+        'Workflow Engine – redesigns workflow capabilities and introduces an interactive flow editor for customizable certificate lifecycle processes.',
+        'Cryptographic Backend – improves key and certificate handling with enhanced PKCS#11 and PKCS#12 support.',
+        'Setup and Onboarding – improves deployment and configuration while extending AOKI and DevOwnerID onboarding through EST, CMP, registration APIs, and automated workflows.',
+        'Certificate and Credential Management – adds new profile types, configurable validity periods, template variables, certificate extensions, CA constraints, SPIFFE identifiers, and improved data handling.',
+        'Security, Configuration, and Documentation – expands system configuration, localization, automated testing, performance optimizations, deployment security, architecture documentation, SBOM information, and CRA-related documentation.',
+      ]
+    },
+    {
       version: 'v0.5.0',
-      title: 'Development Roadmap',
-      date: 'Future',
+      title: 'Beta Release V0.5.0',
+      date: '03/2025',
       features: [
         'PKCS#11 Support – enables secure key storage and cryptographic operations using hardware security modules (HSMs).',
         'Signing Authority (Hash and Sign) – introduces a service for external signing requests, supporting hash-and-sign operations.',

@@ -664,7 +664,7 @@ const AboutPage = () => (
         </p>
         <div style={styles.architectureImageContainer}>
           <img
-            src="/images/trustpoint_architecture_v2.svg"
+            src="/images/trustpoint_architecture_v3.svg"
             alt="Trustpoint Architecture Overview"
             style={styles.architectureImage}
           />
@@ -862,7 +862,7 @@ const AboutPage = () => (
         </p>
         <div style={styles.architectureImageContainer}>
           <img
-            src="/images/operation_modes.svg"
+            src="/images/operation_modes_v2.svg"
             alt="Trustpoint Operation Modes - RA and CA"
             style={styles.architectureImage}
           />
