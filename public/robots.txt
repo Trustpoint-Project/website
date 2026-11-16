@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://industrial-security.io/sitemap-index.xml
