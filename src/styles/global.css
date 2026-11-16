@@ -1,0 +1,656 @@
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  color: #111111;
+  background: #ffffff;
+  font-synthesis: none;
+
+  --primary: #004aad;
+  --muted: #5d6168;
+  --border: #d9dce1;
+  --subtle: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+
+header {
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.navigation > a {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navigation > a img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.navigation nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.navigation nav a {
+  display: inline-block;
+  color: #111111;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navigation nav a:hover,
+.navigation nav a:focus-visible {
+  color: #004aad;
+}
+
+.navigation nav .nav-labs {
+  color: #004aad;
+  font-weight: 700;
+  border-bottom: 2px solid #004aad;
+  padding-bottom: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .navigation {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navigation nav {
+    justify-content: flex-start;
+    gap: 16px 24px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .navigation {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .navigation > a img {
+    width: 155px;
+  }
+
+  .navigation nav {
+    gap: 12px 18px;
+  }
+
+  .navigation nav a {
+    font-size: 14px;
+  }
+}
+
+
+.hero {
+  padding: 120px 0;
+}
+
+.hero h1 {
+  max-width: 950px;
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.hero p {
+  max-width: 750px;
+  margin: 32px 0;
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 24px;
+  border: 1px solid var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+section {
+  padding: 90px 0;
+}
+
+.section-muted {
+  background: var(--subtle);
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+
+.intro {
+  max-width: 850px;
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.capability {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
+}
+
+.capability h3 {
+  margin-top: 0;
+}
+
+.architecture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto 0;
+}
+
+footer {
+  padding: 35px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .navigation {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    padding: 75px 0;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .capabilities {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Research origins */
+
+.section-label {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 20px;
+}
+
+.research-intro {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.research-intro p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.funding-logo {
+  text-align: center;
+}
+
+.funding-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.funding-logo p {
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.partner-group {
+  margin-top: 55px;
+}
+
+.partner-group h3 {
+  font-size: 22px;
+  margin-bottom: 26px;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 115px;
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.partner:hover,
+.partner:focus-visible {
+  border-color: var(--primary);
+}
+
+.partner img {
+  display: block;
+  max-width: 100%;
+  max-height: 65px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .research-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 450px) {
+  .partner-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .partner {
+    min-height: 90px;
+    padding: 14px;
+  }
+}
+
+
+/* Trustpoint Labs */
+
+.labs-section {
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.labs-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.labs-content .intro {
+  margin-bottom: 32px;
+}
+
+.labs-logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: var(--subtle);
+  border: 1px solid var(--border);
+  min-height: 220px;
+}
+
+.labs-logo-link img {
+  display: block;
+  max-width: 100%;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.labs-logo-link:hover,
+.labs-logo-link:focus-visible {
+  border-color: var(--primary);
+}
+
+@media (max-width: 800px) {
+  .labs-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .labs-logo-link {
+    min-height: 160px;
+    padding: 30px;
+  }
+}
+
+
+/* Legal pages */
+
+.legal-page {
+  min-height: 70vh;
+}
+
+.legal-page .container {
+  max-width: 900px;
+}
+
+.legal-page h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.15;
+  margin-bottom: 36px;
+}
+
+.legal-page h2 {
+  font-size: 23px;
+  margin: 42px 0 14px;
+}
+
+.legal-page p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.legal-review {
+  border-left: 3px solid #9a5900;
+  background: #fff2cc;
+  padding: 16px;
+}
+
+/* Footer */
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.site-footer p {
+  margin: 0 0 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-content: start;
+  justify-content: flex-end;
+  max-width: 480px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
+
+
+/* Generic architecture diagram */
+
+.architecture-diagram {
+  margin-top: 48px;
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+}
+
+.architecture-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.architecture-node {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 24px 18px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  text-align: center;
+}
+
+.architecture-node-label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+
+.architecture-node h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.architecture-node p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.architecture-trustpoint {
+  border: 2px solid var(--primary);
+  background: #f1f6ff;
+  flex: 1.2 1 0;
+}
+
+.architecture-trustpoint h3 {
+  color: var(--primary);
+  font-size: 26px;
+}
+
+.architecture-modes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.architecture-modes span {
+  padding: 5px 9px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 12px;
+}
+
+.architecture-connector {
+  flex: 0 1 130px;
+  min-width: 70px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.architecture-connector span {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.architecture-connector small {
+  display: block;
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+.architecture-line {
+  position: relative;
+  height: 2px;
+  background: var(--primary);
+}
+
+.architecture-line::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--primary);
+  border-right: 2px solid var(--primary);
+  transform: rotate(45deg);
+}
+
+.architecture-connector.optional .architecture-line {
+  background: repeating-linear-gradient(
+    to right,
+    var(--primary) 0,
+    var(--primary) 7px,
+    transparent 7px,
+    transparent 12px
+  );
+}
+
+.architecture-note {
+  margin: 32px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive diagram */
+
+@media (max-width: 900px) {
+  .architecture-diagram {
+    padding: 24px;
+  }
+
+  .architecture-flow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .architecture-node {
+    width: 100%;
+    flex: auto;
+  }
+
+  .architecture-connector {
+    flex: auto;
+    width: 100%;
+    min-height: 90px;
+  }
+
+  .architecture-line {
+    width: 2px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  .architecture-line::after {
+    top: auto;
+    right: -4px;
+    bottom: 0;
+    transform: rotate(135deg);
+  }
+
+  .architecture-connector.optional .architecture-line {
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--primary) 0,
+      var(--primary) 7px,
+      transparent 7px,
+      transparent 12px
+    );
+  }
+
+  .architecture-connector span {
+    margin-bottom: 6px;
+  }
+
+  .architecture-connector small {
+    margin-top: 6px;
+  }
+}

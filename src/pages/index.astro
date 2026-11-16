@@ -1,0 +1,523 @@
+
+---
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/600.css";
+import "@fontsource/open-sans/700.css";
+import "../styles/global.css";
+
+const github = "https://github.com/Trustpoint-Project/trustpoint";
+const documentation = "https://trustpoint.readthedocs.io/";
+const labs = "https://trustpoint-labs.com/";
+const campus = "https://www.campus-schwarzwald.de/";
+
+const fundedPartners = [
+  {
+    name: "Campus Schwarzwald",
+    url: campus,
+    logo: "funded_partner_csw.png",
+  },
+  {
+    name: "achelos",
+    url: "https://www.achelos.de/",
+    logo: "funded_partner_achelos.png",
+  },
+  {
+    name: "asvin",
+    url: "https://www.asvin.io/",
+    logo: "funded_partner_asvin.png",
+  },
+  {
+    name: "Hochschule Hamm-Lippstadt",
+    url: "https://www.hshl.de/",
+    logo: "funded_partner_hshl.png",
+  },
+];
+
+const associatedPartners = [
+  {
+    name: "ARBURG",
+    url: "https://www.arburg.com/",
+    logo: "associated_partner_arburg.png",
+  },
+  {
+    name: "Belden",
+    url: "https://www.belden.com/",
+    logo: "associated_partner_belden.png",
+  },
+  {
+    name: "HOMAG",
+    url: "https://www.homag.com/",
+    logo: "associated_partner_homag.png",
+  },
+  {
+    name: "Keyfactor",
+    url: "https://www.keyfactor.com/",
+    logo: "associated_partner_keyfactor.png",
+  },
+  {
+    name: "Phoenix Contact",
+    url: "https://www.phoenixcontact.com/",
+    logo: "associated_partner_phoenix_contact.png",
+  },
+  {
+    name: "Schmalz",
+    url: "https://www.schmalz.com/",
+    logo: "associated_partner_schmalz.png",
+  },
+  {
+    name: "Siemens",
+    url: "https://www.siemens.com/",
+    logo: "associated_partner_siemens.png",
+  },
+  {
+    name: "Diebold Nixdorf",
+    url: "https://www.dieboldnixdorf.com/",
+    logo: "associated_partner_diebold_nixdorf.png",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>Trustpoint | Open-source machine identity for industrial OT</title>
+
+    <meta
+      name="description"
+      content="Trustpoint is an open-source PKI and machine identity platform for industrial environments. Manage digital certificates throughout their lifecycle."
+    />
+
+    <meta name="author" content="Trustpoint Project" />
+    <meta name="theme-color" content="#004aad" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/logos/trustpoint_favicon.png"
+    />
+
+    <link
+      rel="canonical"
+      href="https://industrial-security.io/"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container navigation">
+        <a href="/" aria-label="Trustpoint homepage">
+          <img
+            src="/logos/trustpoint_logo.svg"
+            alt="Trustpoint"
+            width="180"
+          />
+        </a>
+
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#research">Research</a>
+          <a href={documentation}>Documentation</a>
+          <a href={github}>GitHub</a>
+          <a href={labs} class="nav-labs">Trustpoint Labs</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <div class="container hero">
+        <h1>
+          Open-source machine identity for industrial OT.
+        </h1>
+
+        <p>
+          Trustpoint helps industrial devices, machines
+          and services manage digital identities and
+          certificates throughout their lifecycle.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href={github}>
+            Explore on GitHub
+          </a>
+
+          <a class="button" href={documentation}>
+            Documentation
+          </a>
+        </div>
+      </div>
+
+      <!-- Why Trustpoint -->
+      <section id="about" class="section-muted">
+        <div class="container">
+          <p class="section-label">Why Trustpoint</p>
+
+          <h2>Certificate management for industrial systems</h2>
+
+          <p class="intro">
+            Industrial devices increasingly rely on
+            digital certificates for authentication
+            and secure communication.
+          </p>
+
+          <p class="intro">
+            Managing these certificates across heterogeneous
+            devices, segmented networks and long machine
+            lifecycles is challenging.
+          </p>
+
+          <p class="intro">
+            Trustpoint provides PKI and certificate lifecycle
+            management capabilities designed for these
+            industrial environments.
+          </p>
+        </div>
+      </section>
+
+      <!-- Capabilities -->
+      <section id="capabilities">
+        <div class="container">
+          <p class="section-label">Platform capabilities</p>
+
+          <h2>One platform for machine identity</h2>
+
+          <p class="intro">
+            From certificate enrollment to lifecycle
+            operations, Trustpoint combines PKI functions,
+            industrial integration and automation in
+            a locally deployed platform.
+          </p>
+
+          <div class="capabilities">
+            <div class="capability">
+              <h3>Enrollment & lifecycle</h3>
+              <p>
+                EST, CMP, SCEP and REST interfaces for
+                certificate enrollment and lifecycle
+                operations, including issuance, renewal
+                and revocation.
+              </p>
+            </div>
+
+            <div class="capability">
+              <h3>PKI</h3>
+              <p>
+                Operate a local Certificate Authority
+                or act as a Registration Authority
+                connected to an upstream issuing PKI.
+              </p>
+            </div>
+
+            <div class="capability">
+              <h3>Device integration</h3>
+              <p>
+                Connect industrial devices using
+                supported enrollment protocols,
+                OPC UA GDS Push, Trustpoint Agents
+                and device-specific interfaces.
+              </p>
+            </div>
+
+            <div class="capability">
+              <h3>Automation & operations</h3>
+              <p>
+                Coordinate certificate operations
+                through workflows, approvals,
+                webhooks and management interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section id="architecture" class="section-muted">
+        <div class="container">
+          <p class="section-label">Architecture</p>
+
+          <h2>Designed for industrial environments</h2>
+
+          <p class="intro">
+            Trustpoint brings certificate lifecycle management
+            close to industrial devices. It can issue
+            certificates locally or integrate with an
+            existing enterprise PKI.
+          </p>
+
+          <div class="architecture-diagram">
+            <div class="architecture-flow">
+
+              <!-- Industrial endpoints -->
+              <div class="architecture-node">
+                <span class="architecture-node-label">
+                  INDUSTRIAL ENVIRONMENT
+                </span>
+                <h3>Devices & applications</h3>
+                <p>
+                  PLCs · Gateways · Machines · Industrial services
+                </p>
+              </div>
+
+              <!-- Enrollment -->
+              <div class="architecture-connector">
+                <span>Enrollment & lifecycle</span>
+                <div class="architecture-line"></div>
+                <small>EST · CMP · SCEP · REST</small>
+              </div>
+
+              <!-- Trustpoint -->
+              <div class="architecture-node architecture-trustpoint">
+                <span class="architecture-node-label">
+                  MACHINE IDENTITY
+                </span>
+                <h3>Trustpoint</h3>
+                <p>Certificate lifecycle management</p>
+
+                <div class="architecture-modes">
+                  <span>Local CA</span>
+                  <span>Registration Authority</span>
+                </div>
+              </div>
+
+              <!-- Optional upstream CA -->
+              <div class="architecture-connector optional">
+                <span>Optional upstream PKI</span>
+                <div class="architecture-line"></div>
+                <small>RA mode</small>
+              </div>
+
+              <!-- Enterprise PKI -->
+              <div class="architecture-node">
+                <span class="architecture-node-label">
+                  EXISTING INFRASTRUCTURE
+                </span>
+                <h3>Enterprise PKI</h3>
+                <p>External Certificate Authority</p>
+              </div>
+            </div>
+
+            <p class="architecture-note">
+              Trustpoint can operate independently as a local CA.
+              In RA mode, a reachable upstream CA issues certificates.
+              Supported enrollment and device integration methods
+              depend on the deployed version and endpoints.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open source -->
+      <section id="open-source">
+        <div class="container">
+          <p class="section-label">Open source</p>
+
+          <h2>Open source. Open standards.</h2>
+
+          <p class="intro">
+            Trustpoint is available under the MIT license.
+            The source code is publicly available on GitHub,
+            where the project also publishes releases,
+            tracks issues and accepts contributions.
+          </p>
+
+          <div class="actions">
+            <a class="button primary" href={github}>
+              View repository
+            </a>
+
+            <a class="button" href={`${github}/releases`}>
+              GitHub releases
+            </a>
+
+            <a class="button" href={`${github}/issues`}>
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trustpoint Labs -->
+      <section id="professional-services" class="labs-section">
+        <div class="container labs-layout">
+          <div class="labs-content">
+            <p class="section-label">Professional services</p>
+
+            <h2>Professional support for Trustpoint</h2>
+
+            <p class="intro">
+              Trustpoint is open-source software.
+              It is maintained by Campus Schwarzwald with Trustpoint Labs
+              providing professional engineering,
+              integration, maintenance and support services
+              for organizations deploying Trustpoint in
+              industrial environments.
+            </p>
+
+            <a
+              class="button primary"
+              href={labs}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Trustpoint Labs
+            </a>
+          </div>
+
+          <a
+            href={labs}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="labs-logo-link"
+            aria-label="Visit Trustpoint Labs"
+          >
+            <img
+              src="/logos/trustpoint_labs_logo.svg"
+              alt="Trustpoint Labs"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Research origins -->
+      <section
+        id="research"
+        class="research-section section-muted"
+      >
+        <div class="container">
+          <p class="section-label">Project origins</p>
+          <h2>From research to open source</h2>
+
+          <div class="research-intro">
+            <div>
+              <p>
+                Trustpoint originated in a publicly
+                funded research project launched in
+                September 2023, supported by the
+                German Federal Ministry of Research,
+                Technology and Space.
+              </p>
+
+              <p>
+                The goal was to develop an open-source
+                solution for securely provisioning digital
+                certificates in industrial networks and
+                managing them throughout their lifecycle.
+              </p>
+
+              <p>
+                The research consortium brought together
+                cybersecurity companies, research
+                institutions and universities. Close
+                collaboration with associated industrial
+                partners helped incorporate practical
+                requirements from mechanical engineering
+                and manufacturing.
+              </p>
+            </div>
+
+            <div class="funding-logo">
+              <img
+                src="/images/organization_logos/BMFTR_Logo.png"
+                alt="Federal Ministry of Research, Technology and Space"
+                loading="lazy"
+              />
+              <p>Publicly funded research project</p>
+            </div>
+          </div>
+
+          <!-- Funded partners -->
+          <div class="partner-group">
+            <h3>Funded partners</h3>
+
+            <div class="partner-grid">
+              {fundedPartners.map((partner) => (
+                <a
+                  class="partner"
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${partner.name}`}
+                >
+                  <img
+                    src={`/images/organization_logos/${partner.logo}`}
+                    alt={partner.name}
+                    loading="lazy"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Associated partners -->
+          <div class="partner-group">
+            <h3>Associated partners</h3>
+
+            <div class="partner-grid">
+              {associatedPartners.map((partner) => (
+                <a
+                  class="partner"
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${partner.name}`}
+                >
+                  <img
+                    src={`/images/organization_logos/${partner.logo}`}
+                    alt={partner.name}
+                    loading="lazy"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container site-footer">
+        <div>
+          <p><strong>Trustpoint</strong></p>
+
+          <p>
+            Open-source machine identity
+            for industrial environments.
+          </p>
+
+          <p>
+            An open-source project originating from
+            research at
+            <a
+              href={campus}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Campus Schwarzwald
+            </a>.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href={github}>GitHub</a>
+          <a href="https://www.linkedin.com/company/99494956/">LinkedIn</a>
+          <a href={documentation}>Documentation</a>
+          <a href={labs}>Trustpoint Labs</a>
+          <a href={campus}>Campus Schwarzwald</a>
+          <a href="/imprint">Imprint</a>
+          <a href="/privacy">Privacy Policy</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

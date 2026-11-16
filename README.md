@@ -1,58 +1,43 @@
-# website
-Trustpoint website built with Gatsby and deployed via Netlify. Content is managed in Git and deployed automatically from GitHub.
+# Astro Starter Kit: Minimal
 
-## Getting Started
-
-### Prerequisites
-- Node.js (v18 or later)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Trustpoint-Project/website.git
-   cd website
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run develop
-   ```
-
-   The site will be available at `http://localhost:8000`.
-
-### Building for Production
-
-```bash
-npm run build
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-The built files will be in the `public` directory.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Content Management
+## 🚀 Project Structure
 
-Content is managed via Markdown files in the `content/` directory. Add your Markdown files there, and they will be processed by Gatsby.
+Inside of your Astro project, you'll see the following folders and files:
 
-## Deployment
-
-The site is automatically deployed to Netlify on pushes to the `main` branch.
-
-For local testing of the build:
-```bash
-npm run build
-npm run serve
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## Project Structure
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-- `src/pages/` - Gatsby pages
-- `src/components/` - Reusable React components
-- `content/` - Markdown content files
-- `src/images/` - Static images
-- `public/` - Built site (generated)
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

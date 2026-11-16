@@ -1,0 +1,62 @@
+
+# Trustpoint
+
+> Trustpoint is an open-source PKI and machine identity management platform for industrial operational technology (OT). It helps manufacturers, machine builders, system integrators and plant operators manage digital identities and X.509 certificates throughout their lifecycle.
+
+Website: https://industrial-security.io
+
+Trustpoint is designed for industrial environments with long-lived machines, segmented networks and heterogeneous devices.
+
+The platform provides certificate enrollment, lifecycle management, PKI functions and industrial device integration.
+
+Trustpoint can operate as a local Certificate Authority (CA) or as a Registration Authority (RA) connected to an upstream issuing PKI.
+
+Trustpoint is MIT-licensed open-source software.
+
+## Project resources
+
+- [Official website](https://industrial-security.io/): Project overview, capabilities, architecture and research origins.
+- [GitHub repository](https://github.com/Trustpoint-Project/trustpoint): Source code, development and contributions.
+- [Documentation](https://trustpoint.readthedocs.io/): Technical documentation and deployment guidance.
+- [GitHub Releases](https://github.com/Trustpoint-Project/trustpoint/releases): Software releases and release notes.
+- [GitHub Issues](https://github.com/Trustpoint-Project/trustpoint/issues): Bug reports and feature requests.
+
+## Capabilities
+
+- [Certificate enrollment and lifecycle](https://github.com/Trustpoint-Project/trustpoint): EST, CMP, SCEP, REST interfaces, certificate issuance, renewal, rekeying and revocation.
+- [PKI integration](https://github.com/Trustpoint-Project/trustpoint): Local CA functionality and RA integration with external issuing PKI.
+- [Industrial device integration](https://github.com/Trustpoint-Project/trustpoint): Industrial enrollment protocols, OPC UA GDS Push and Trustpoint Agents.
+- [Automation and operations](https://github.com/Trustpoint-Project/trustpoint): Workflows, approvals, webhooks and certificate management interfaces.
+
+Capabilities depend on the software version and supported integration. Consult the documentation and release notes for verified availability.
+
+## Project maintainers
+
+- [Campus Schwarzwald](https://www.campus-schwarzwald.de/): Project maintainer and research partner for the Trustpoint initiative.
+- [Trustpoint Labs GmbH](https://trustpoint-labs.com/): Commercial engineering, integration, maintenance and support services for Trustpoint deployments.
+
+Campus Schwarzwald and Trustpoint Labs GmbH jointly support the Trustpoint project. Trustpoint Labs GmbH provides commercial services around the open-source platform, while Campus Schwarzwald acts as a maintainer and research partner.
+
+## Research origins
+
+- [Trustpoint research project](https://industrial-security.io/#research): Background of the publicly funded research project launched in September 2023.
+
+The research project was funded by the German Federal Ministry of Research, Technology and Space.
+
+Funded project partners:
+- Campus Schwarzwald
+- achelos
+- asvin
+- Hochschule Hamm-Lippstadt
+
+Associated research partners:
+- ARBURG
+- Belden
+- HOMAG
+- Keyfactor
+- Phoenix Contact
+- Schmalz
+- Siemens
+- Diebold Nixdorf
+
+These organizations are identified as research-project partners, not necessarily current commercial customers or sponsors.
